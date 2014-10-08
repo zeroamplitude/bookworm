@@ -32,10 +32,10 @@ CREATE TABLE school(
 	postal_code	VARCHAR(6 )	NOT NULL	
 );
 
--- CREATE TABLE program(
--- 	program_id	SERIAL 	PRIMARY KEY NOT NULL,
--- 	subject		VARCHAR(30)	UNIQUE 	NOT NULL		
--- );
+CREATE TABLE program(
+	program_id	SERIAL 	PRIMARY KEY NOT NULL,
+	subject		VARCHAR(30)	UNIQUE 	NOT NULL		
+);
 
 CREATE TABLE auction(
 	auction_id	SERIAL 	PRIMARY KEY NOT NULL,
