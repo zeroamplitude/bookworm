@@ -1,12 +1,12 @@
 CREATE TABLE member(
 	member_id	SERIAL 		PRIMARY KEY	NOT NULL,
-	first_name	VARCHAR(40)	NOT NULL,
-	last_name	VARCHAR(40) NOT NULL,
+	firstName	VARCHAR(40)	NOT NULL,
+	lastName	VARCHAR(40) NOT NULL,
 	school		VARCHAR(40)	NOT NULL,
 	email		VARCHAR(70) NOT NULL,
 	address		VARCHAR(70) NOT NULL,
 	city		VARCHAR(30) NOT NULL,
-	provice		VARCHAR(30) NOT NULL,
+	province	VARCHAR(30) NOT NULL,
 	postal_code	VARCHAR(6) 	NOT NULL,
 	phone		VARCHAR(10)	NOT NULL,
 	subject		VARCHAR(30)	NOT NULL,
@@ -31,11 +31,6 @@ CREATE TABLE school(
 	province	VARCHAR(30)	NOT NULL,
 	postal_code	VARCHAR(6 )	NOT NULL	
 );
-
--- CREATE TABLE program(
--- 	program_id	SERIAL 	PRIMARY KEY NOT NULL,
--- 	subject		VARCHAR(30)	UNIQUE 	NOT NULL		
--- );
 
 CREATE TABLE auction(
 	auction_id	SERIAL 	PRIMARY KEY NOT NULL,
