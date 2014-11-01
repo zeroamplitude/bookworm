@@ -51,7 +51,7 @@ CREATE TABLE Auctions(
 	end_time 	TIME	NOT NULL,
 	member_id	INTEGER UNIQUE	NOT NULL,
 	min_price	FLOAT	NOT NULL,
-	bid_id 		INTEGER UNIQUE 	NOT NULL
+	bid_id 		INTEGER UNIQUE 	NOT NULL,
 	PRIMARY KEY(auction_id)
 );
 
