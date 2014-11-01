@@ -4,8 +4,6 @@ DROP TABLE IF EXISTS Schools;
 DROP TABLE IF EXISTS Auctions;
 DROP TABLE IF EXISTS Bids;
 
-
-
 CREATE TABLE Members(
 	member_id	SERIAL 		NOT NULL,
 	firstName	VARCHAR(40)	NOT NULL,
@@ -40,7 +38,7 @@ CREATE TABLE Schools(
 --	address		VARCHAR(99) NOT NULL,
 --	city		VARCHAR(30)	NOT NULL,
 --	province	VARCHAR(30)	NOT NULL,
---	postal_code	VARCHAR(6 )	NOT NULL
+--	postal_code	VARCHAR(6 )	NOT NULL,
 PRIMARY KEY(school_id)
 );
 
@@ -64,10 +62,11 @@ CREATE TABLE Bids(
 );
 
 ALTER TABLE Members
-ADD FOREIGN KEY school_id REFERENCES Schools(school_id);
+ADD FOREIGN KEY school_id 	REFERENCES Schools(school_id);
 
 ALTER TABLE Auctions
-ADD FOREIGN KEY book_id REFERENCES Books(book_id);
+ADD FOREIGN KEY book_id 	REFERENCES Books(book_id);
 
 ALTER TABLE Bids
-ADD FOREIGN KEY auction_id REFERENCES Auctions(auction_id);
+ADD FOREIGN KEY auction_id 	REFERENCES Auctions(auction_id);
+ADD FOREIGN KEY member_id 	REFERENCES Members(member_id);
