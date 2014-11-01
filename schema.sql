@@ -55,18 +55,18 @@ CREATE TABLE Auctions(
 
 CREATE TABLE Bids(
 	bid_id		INTEGER NOT NULL,
-	auction_id	INTEGER NOT NULL
+	auction_id	INTEGER NOT NULL,
 	bdPrice 	float	NOT NULL,
 	member_id	INTEGER	NOT NULL,
 	PRIMARY KEY(bid_id)
 );
 
 ALTER TABLE Members
-ADD FOREIGN KEY school_id 	REFERENCES Schools(school_id);
+ADD FOREIGN KEY (school_id) 	REFERENCES Schools(school_id);
 
 ALTER TABLE Auctions
-ADD FOREIGN KEY book_id 	REFERENCES Books(book_id);
+ADD FOREIGN KEY (book_id) 	REFERENCES Books(book_id);
 
 ALTER TABLE Bids
-ADD FOREIGN KEY auction_id 	REFERENCES Auctions(auction_id);
-ADD FOREIGN KEY member_id 	REFERENCES Members(member_id);
+ADD FOREIGN KEY (auction_id) 	REFERENCES Auctions(auction_id),
+ADD FOREIGN KEY (member_id) 	REFERENCES Members(member_id);
