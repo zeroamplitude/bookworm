@@ -2,8 +2,11 @@ CDApplet==1.0
 CDBashApplet==1.0
 Flask==0.10.1
 Flask-Login==0.2.11
+Flask-Migrate==1.2.0
 Flask-SQLAlchemy==2.0
+Flask-Script==2.0.5
 Jinja2==2.7.3
+Mako==1.0.0
 MarkupSafe==0.23
 PAM==0.4.2
 Pillow==2.3.0
@@ -16,6 +19,7 @@ Twisted-Core==13.2.0
 Twisted-Web==13.2.0
 Werkzeug==0.9.6
 adium-theme-ubuntu==0.3.4
+alembic==0.6.7
 app==0.0.2
 apt-xapian-index==0.45
 argparse==1.2.1
