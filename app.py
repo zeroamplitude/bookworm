@@ -1,11 +1,12 @@
 from flask import Flask
 import os
-from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import create_engine, MetaData
 
 
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
-db = SQLAlchemy(app)
+engine = create_engine('postgresql+psycopg2://bookworm:bookworm@localhost/bookworm')
+metadata = MetaData(bind=engine)
 
 print os.environ['APP_SETTINGS']
 
