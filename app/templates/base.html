@@ -3,12 +3,19 @@
         {% if title %}
         <title>{{ title }} - bookworm</title>
         {% else %}
-        <title> Welcome to bookworm</title>
+        <title>bookworm</title>
         {% endif %}
     </head>
     <body>
         <div>Bookworm: <a href="/index">Home</a> </div>
         <hr>
+        {% with messages = get_flashed_messages() %)
+        {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li>{{ message }} </li>
+        {% endfor %}
+        </ul>
         {% block content %}{% endblock %}
     </body>
 </html>
