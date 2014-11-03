@@ -310,7 +310,7 @@ def addusersitepackages(known_paths):
     """Add a per user site-package to sys.path
 
     Each user has its own python directory with site-packages in the
-    home directory.
+    home.html directory.
 
     USER_BASE is the root directory for all Python versions
 

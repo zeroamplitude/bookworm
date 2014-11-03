@@ -1,38 +1,27 @@
+<!DOCTYPE html>
 <html>
     <head>
-        {% if title %}
+        <!--{% if title %}
         <title>{{ title }} - bookworm</title>
-        {% else %}
-        <title>bookworm</title>
-        {% endif %}
+        {% else %}-->
+        <title>Bookworm</title>
+       <!-- {% endif %}-->
+        <strong><link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"></strong>
     </head>
     <body>
-    <!--Facebook Authorization-->
-    <!--<script>-->
-      <!--window.fbAsyncInit = function() {-->
-        <!--FB.init({-->
-          <!--appId      : 'your-app-id',-->
-          <!--xfbml      : true,-->
-          <!--version    : 'v2.1'-->
-        <!--});-->
-      <!--};-->
 
-      <!--(function(d, s, id){-->
-         <!--var js, fjs = d.getElementsByTagName(s)[0];-->
-         <!--if (d.getElementById(id)) {return;}-->
-         <!--js = d.createElement(s); js.id = id;-->
-         <!--js.src = "//connect.facebook.net/en_US/sdk.js";-->
-         <!--fjs.parentNode.insertBefore(js, fjs);-->
-       <!--}(document, 'script', 'facebook-jssdk'));
-    </script>-->
-        <div>Bookworm: <a href="{{ url_for('index') }}">Home</a>
-            {% if g.user.is_authenticated() %}
-            | <a href="{{ url_for('user', nickname=g.user.nickname) }}">Profile</a>
-            | <a href="{{ url_for('logout') }}">Logout</a>
-            {% endif %}
-        </div>
+        <header>
+            <div class="container">
+                <h1 class="logo">Bookworm</h1>
+                    <!--<a href="{{ url_for('index') }}">Home</a>-->
+                {% if g.user.is_authenticated() %}
+                | <a href="{{ url_for('user', nickname=g.user.nickname) }}">Profile</a>
+                | <a href="{{ url_for('logout') }}">Logout</a>
+                {% endif %}
+            </div>
+        </header>
         <hr>
-        {% with messages = get_flashed_messages() %}
+        <!--{% with messages = get_flashed_messages() %}
             {% if messages %}
                 <ul>
                 {% for message in messages %}
@@ -40,7 +29,10 @@
                 {% endfor %}
                 </ul>
             {% endif %}
-        {% endwith %}
-        {% block content %}{% endblock %}
+        {% endwith %}-->
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
     </body>
 </html>

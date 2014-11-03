@@ -1,11 +1,35 @@
 from flask.ext.wtf import Form
-from wtforms import StringField, BooleanField, TextAreaField
+from wtforms import StringField, BooleanField, TextAreaField, validators, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Length
 from app.models import User
+
+
+class SignupForm(Form):
+    name = StringField("First name", [validators.DataRequired("Please enter your name.")])
+    password = PasswordField('Password', [validators.DataRequired("Please enter a password.")])
+    email = StringField("Email", [validators.DataRequired("Please enter your email address"),
+                                  validators.Email("Please enter a valid email address.")])
+    submit = SubmitField("Create account")
+
+    def __init__(self, *args, **kwargs):
+        Form.__init__(self, *args, **kwargs)
+
+    def validate(self):
+        if not Form.validate(self):
+            return False
+
+        user = User.query.filter_by(email=self.email.data.lower()).first()
+        if user:
+            self.email.errors.append("That email address is already taken")
+            return False
+        else:
+            return True
+
 
 class LoginForm(Form):
     openid = StringField('openid', validators=[DataRequired()])
     remember_me = BooleanField('remember_me', default=False)
+
 
 class EditForm(Form):
     nickname = StringField('nickname', validators=[DataRequired()])

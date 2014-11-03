@@ -1,7 +1,7 @@
 from flask import render_template, flash, redirect, session, url_for, request, g
 from flask.ext.login import login_user, logout_user, current_user, login_required
 from app import app, db, lm, oid
-from forms import LoginForm, EditForm
+from forms import LoginForm, EditForm, SignupForm
 from models import User
 from datetime import datetime
 
@@ -39,6 +39,19 @@ def index():
 @lm.user_loader
 def load_user(id):
     return User.query.get(int(id))
+
+
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    form = SignupForm()
+
+    if request.method == 'POST':
+        if form.validate() == False:
+            return render_template('signup.html', form=form)
+        else:
+            return "[1] Create a new user [2] sing in the user [3] redirect to the user's profile"
+    elif request.method == 'GET':
+        return render_template('signup.html', form=form)
 
 
 # Login Portal
