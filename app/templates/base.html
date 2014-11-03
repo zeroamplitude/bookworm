@@ -27,7 +27,7 @@
     </script>-->
         <div>Bookworm: <a href="{{ url_for('index') }}">Home</a>
             {% if g.user.is_authenticated() %}
-            | <a href="{{ url_for('user', nickname=g.nickname) }}">Profile</a>
+            | <a href="{{ url_for('user', nickname=g.user.nickname) }}">Profile</a>
             | <a href="{{ url_for('logout') }}">Logout</a>
             {% endif %}
         </div>
