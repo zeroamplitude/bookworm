@@ -38,7 +38,7 @@ class User(db.Model):
         version = 2
         while True:
             new_nickname = nickname + str(version)
-            if User.query.filer_by(nickname=new_nickname).first() is None:
+            if User.query.filter_by(nickname=new_nickname).first() is None:
                 break
             version += 1
         return new_nickname
