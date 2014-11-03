@@ -4,6 +4,15 @@ from wtforms.validators import DataRequired, Length
 from app.models import User
 
 
+class ContactForm(Form):
+    name = StringField("Name")
+    email = StringField("Email")
+    subject = StringField("Subject")
+    message = TextAreaField("Message")
+    submit = SubmitField("Send")
+
+
+
 class SignupForm(Form):
     name = StringField("First name", [validators.DataRequired("Please enter your name.")])
     password = PasswordField('Password', [validators.DataRequired("Please enter a password.")])
@@ -24,7 +33,6 @@ class SignupForm(Form):
             return False
         else:
             return True
-
 
 class LoginForm(Form):
     openid = StringField('openid', validators=[DataRequired()])
