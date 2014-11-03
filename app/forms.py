@@ -5,10 +5,11 @@ from app.models import User
 
 
 class ContactForm(Form):
-    name = StringField("Name")
-    email = StringField("Email")
-    subject = StringField("Subject")
-    message = TextAreaField("Message")
+    name = StringField("Name", [validators.DataRequired("Please enter your name")])
+    email = StringField("Email", [validators.DataRequired("Please enter you email"),
+                                  validators.Email("Please enter a  valid email")])
+    subject = StringField("Subject", [validators.DataRequired("Please enter a subject")])
+    message = TextAreaField("Message", [validators.DataRequired("Please enter your message")])
     submit = SubmitField("Send")
 
 

@@ -1,9 +1,12 @@
 from flask import Flask, render_template, flash, redirect, session, url_for, request, g
 from flask.ext.login import login_user, logout_user, current_user, login_required
+
 from app import app, db, lm, oid
 from forms import LoginForm, ContactForm, EditForm, SignupForm
 from models import User
 from datetime import datetime
+
+
 
 @app.errorhandler(404)
 def not_found_error(error):
@@ -16,21 +19,35 @@ def internal_error(error):
     return render_template('500.html'), 500
 
 
+# Home - Home page
 @app.route('/')
 @app.route('/home')
 def home():
     return render_template('home.html')
 
+# About - Provides basic information about bookworm
 @app.route('/about')
 def about():
     return render_template('about.html')
 
+# Contact - Allows user to contact web admin
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     form = ContactForm()
 
     if request.method == 'POST':
-        return 'Form posted.'
+        if not form.validate():
+            flash('All fields are required.')
+            return render_template('contact.html', form=form)
+        else:
+            msg = Message(form.subject.data, sender='contact@example.com')
+            msg.body = """
+            From: %s <%s>
+            %s
+            """ % (form.name.data, form.email.data, form.message.data)
+            mail.send(msg)
+
+            return 'Form posted.'
     elif request.method == 'GET':
         return render_template('contact.html', form=form)
 
