@@ -62,9 +62,33 @@ def signup():
         if not form.validate():
             return render_template('signup.html', form=form)
         else:
-            return "[1] Create a new user [2] sing in the user [3] redirect to the user's profile"
+            # << SQL >>
+            # INSERT INTO users (firstname, lastname, email, pwdhash)
+            # VALUES (form.firstname.data, form.lastname.data, form.email.data, form.password.data)
+            newuser = User(form.fname.data, form.lname.data, form.email.data, form.password.data)
+            db.session.add(newuser)
+            db.session.commit()
+
+            session['email'] = newuser.email
+            return redirect(url_for('profile'))
+
     elif request.method == 'GET':
         return render_template('signup.html', form=form)
+
+@app.route('/profile')
+def profile():
+
+    if 'email' not in session:
+        return redirect(url_for('signin'))
+
+    # << SQL >>
+    # SELECT * FROM users WHERE email = session['email'];
+    user = User.query.filter_by(email = session['email']).first()
+
+    if user is None:
+        return redirect(url_for('signin'))
+    else:
+        return render_template('profile.html')
 
 
 @app.route('/logout')

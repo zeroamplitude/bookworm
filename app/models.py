@@ -4,91 +4,99 @@ from hashlib import md5
 
 
 class User(db.Model):
-    user_id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, index=True, primary_key=True)
     fname = db.Column(db.String(100))
     lname = db.Column(db.String(100))
-    email = db.Column(db.String(120), index=True, unique=True)
-    password = db.Column(db.String(54))
-    posts = db.relationship('Post', backref='author', lazy='dynamic')
+    email = db.Column(db.String(120), unique=True)
+    pwdhash = db.Column(db.String(54))
+    #posts = db.relationship('Post', backref='author', lazy='dynamic')
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime)
 
+    def __init__(self, fname, lname, email, password):
+        self.fname = fname.title()
+        self.lname = lname.title()
+        self.email = email.lower()
+        self.set_password(password)
 
-    # << password hash not implemented >>
-    # def set_password(self, password):
-    #     self.pwdhash = generate_password_hash(password)
-    #
-    # def check_password(self, password):
-    #     return check_password_hash(self.pwdhash, password)
+        # << password hash not implemented >>
+    def set_password(self, password):
+        self.pwdhash = generate_password_hash(password)
 
-    def is_authenticated(self):
-        return True
+    def check_password(self, password):
+        return check_password_hash(self.pwdhash, password)
 
-    def is_active(self):
-        return True
-
-    def is_anonymous(self):
-        return False
-
-    def get_id(self):
-        try:
-            return unicode(self.id)
-        except NameError:
-            return  str(self.id)
-
-    def __repr__(self):
-        return '<User % r>' % self.nickname
-
-    def avatar(self, size):
-        return 'http://www.gravatar.com/avatar/%s?d=mm&s=%d' % (md5(self.email.encode('utf-8')).hexdigest(), size)
-
-    @staticmethod
-    def make_unique_nickname(nickname):
-        if User.query.filter_by(nickname=nickname).first() is None:
-            return nickname
-        version = 2
-        while True:
-            new_nickname = nickname + str(version)
-            if User.query.filter_by(nickname=new_nickname).first() is None:
-                break
-            version += 1
-        return new_nickname
-
-class Post(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    body = db.Column(db.String(140))
-    timestamp = db.Column(db.DateTime)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-
-    def __repr__(self):
-        return '<Post %r>' % (self.body)
-
-class Bids(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    auction_id = db.Column(db.String(120))
-    bdPrice = db.Column(db.Integer,index=True)
-    user_id = db.Column(db.String(120))
-
-class Book(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(120))
-    publisher= db.Column(db.String(120))
-    year = db.Column(db.Integer)
-    subject=db.Column(db.String(120))      
+        # def is_authenticated(self):
+        #     return True
+        #
+        # def is_active(self):
+        #     return True
+        #
+        # def is_anonymous(self):
+        #     return False
+        #
+        # def get_id(self):
+        #     try:
+        #         return unicode(self.id)
+        #     except NameError:
+        #         return  str(self.id)
+        #
+        # def __repr__(self):
+        #     return '<User % r>' % self.nickname
+        #
+        # def avatar(self, size):
+        #     return 'http://www.gravatar.com/avatar/%s?d=mm&s=%d' % (md5(self.email.encode('utf-8')).hexdigest(), size)
+        #
+        # @staticmethod
+        # def make_unique_nickname(nickname):
+        #     if User.query.filter_by(nickname=nickname).first() is None:
+        #         return nickname
+        #     version = 2
+        #     while True:
+        #         new_nickname = nickname + str(version)
+        #         if User.query.filter_by(nickname=new_nickname).first() is None:
+        #             break
+        #         version += 1
+        #     return new_nickname
 
 
+# class Post(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     body = db.Column(db.String(140))
+#     timestamp = db.Column(db.DateTime)
+#     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+#
+#     def __repr__(self):
+#         return '<Post %r>' % (self.body)
 
-class Auctions(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    book_id = db.Column(db.Integer)
-    start = db.Column(db.DateTime)
-    end = db.relationship(db.DateTime)
-    user_id = db.Column(db.String(120))
-    min_price = db.Column(db.Float) 
-    bid_id=db.Column(db.Integer)
-
-class Schools(db.Model):
- 	id=db.Column(db.Integer, primary_key=True)
- 	name=db.Column(db.String(150))
- 	city=db.Column(db.String(150))
- 	province=db.Column(db.String(150))
+#
+# class Bids(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     auction_id = db.Column(db.String(120))
+#     bdPrice = db.Column(db.Integer, index=True)
+#     user_id = db.Column(db.String(120))
+#
+#
+# class Book(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     name = db.Column(db.String(120))
+#     publisher = db.Column(db.String(120))
+#     year = db.Column(db.Integer)
+#     subject = db.Column(db.String(120))
+#
+#
+# class Auctions(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     book_id = db.Column(db.Integer)
+#     start = db.Column(db.DateTime)
+#     end = db.relationship(db.DateTime)
+#     user_id = db.Column(db.String(120))
+#     min_price = db.Column(db.Float)
+#     bid_id = db.Column(db.Integer)
+#
+#
+# class Schools(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     name = db.Column(db.String(150))
+#     city = db.Column(db.String(150))
+#     province = db.Column(db.String(150))

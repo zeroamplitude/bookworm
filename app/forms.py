@@ -1,5 +1,5 @@
 from flask.ext.wtf import Form
-from wtforms import StringField, BooleanField, TextAreaField, validators, PasswordField, SubmitField
+from wtforms import StringField, BooleanField, TextAreaField, validators, PasswordField, SubmitField, ValidationError
 from wtforms.validators import DataRequired, Length
 from app.models import User
 
@@ -25,16 +25,19 @@ class SignupForm(Form):
     def __init__(self, *args, **kwargs):
         Form.__init__(self, *args, **kwargs)
 
-    def validate(self):
-        if not Form.validate(self):
-            return False
-
-        user = User.query.filter_by(email=self.email.data.lower()).first()
-        if user:
-            self.email.errors.append("That email address is already taken")
-            return False
-        else:
-            return True
+    # def validate(self):
+    #     if not Form.validate(self):
+    #         return False
+    #     # << SQL >>
+    #     # SELECT * FROM users
+    #     # WHERE email = self.email.data.lower()
+    #     # LIMIT 1
+    #     user = User.query.filter_by(email=self.email.data.lower()).first()
+    #     if user:
+    #         self.email.errors.append("That email address is already taken")
+    #         return False
+    #     else:
+    #         return True
 
 
 class LoginForm(Form):
