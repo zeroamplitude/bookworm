@@ -9,7 +9,7 @@ class User(db.Model):
     lname = db.Column(db.String(100))
     email = db.Column(db.String(120), unique=True)
     pwdhash = db.Column(db.String(54))
-    #posts = db.relationship('Post', backref='author', lazy='dynamic')
+    # posts = db.relationship('Post', backref='author', lazy='dynamic')
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime)
 
