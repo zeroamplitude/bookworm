@@ -1,14 +1,25 @@
+from werkzeug.security import generate_password_hash, check_password_hash
 from app import db
 from hashlib import md5
 
 
 class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    nickname = db.Column(db.String(64), index=True, unique=True)
+    user_id = db.Column(db.Integer, primary_key=True)
+    fname = db.Column(db.String(100))
+    lname = db.Column(db.String(100))
     email = db.Column(db.String(120), index=True, unique=True)
+    password = db.Column(db.String(54))
     posts = db.relationship('Post', backref='author', lazy='dynamic')
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime)
+
+
+
+    # def set_password(self, password):
+    #     self.pwdhash = generate_password_hash(password)
+    #
+    # def check_password(self, password):
+    #     return check_password_hash(self.pwdhash, password)
 
     def is_authenticated(self):
         return True
