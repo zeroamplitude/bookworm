@@ -5,6 +5,7 @@ from hashlib import md5
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nickname = db.Column(db.String(64), index=True, unique=True)
+    password = db.Column(db.String(54))
     email = db.Column(db.String(120), index=True, unique=True)
     posts = db.relationship('Post', backref='author', lazy='dynamic')
     about_me = db.Column(db.String(140))
@@ -23,7 +24,7 @@ class User(db.Model):
         try:
             return unicode(self.id)
         except NameError:
-            return  str(self.id)
+            return str(self.id)
 
     def __repr__(self):
         return '<User % r>' % self.nickname
