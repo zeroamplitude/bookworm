@@ -51,3 +51,33 @@ class Post(db.Model):
 
     def __repr__(self):
         return '<Post %r>' % (self.body)
+
+class Bids(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    auction_id = db.Column(db.String(120))
+    bdPrice = db.Column(db.Integer,index=True)
+    user_id = db.Column(db.String(120))
+
+class Book(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(120))
+    publisher= db.Column(db.String(120))
+    year = db.Column(db.Integer)
+    subject=db.Column(db.String(120))      
+
+
+
+class Auctions(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    book_id = db.Column(db.Integer)
+    start = db.Column(db.DateTime)
+    end = db.relationship(db.DateTime)
+    user_id = db.Column(db.String(120))
+    min_price = db.Column(db.Float) 
+    bid_id=db.Column(db.Integer)
+
+class Schools(db.Model):
+ 	id=db.Column(db.Integer, primary_key=True)
+ 	name=db.Column(db.String(150))
+ 	city=db.Column(db.String(150))
+ 	province=db.Column(db.String(150))
