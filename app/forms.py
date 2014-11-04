@@ -15,7 +15,8 @@ class ContactForm(Form):
 
 
 class SignupForm(Form):
-    name = StringField("First name", [validators.DataRequired("Please enter your name.")])
+    fname = StringField("First name", [validators.DataRequired("Please enter your  first name.")])
+    lname = StringField("Last name", [validators.DataRequired("Please enter your  last name.")])
     password = PasswordField('Password', [validators.DataRequired("Please enter a password.")])
     email = StringField("Email", [validators.DataRequired("Please enter your email address"),
                                   validators.Email("Please enter a valid email address.")])

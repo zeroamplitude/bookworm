@@ -14,7 +14,7 @@ class User(db.Model):
     last_seen = db.Column(db.DateTime)
 
 
-
+    # << password hash not implemented >>
     # def set_password(self, password):
     #     self.pwdhash = generate_password_hash(password)
     #

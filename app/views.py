@@ -59,7 +59,7 @@ def signup():
     form = SignupForm()
 
     if request.method == 'POST':
-        if form.validate() == False:
+        if not form.validate():
             return render_template('signup.html', form=form)
         else:
             return "[1] Create a new user [2] sing in the user [3] redirect to the user's profile"
