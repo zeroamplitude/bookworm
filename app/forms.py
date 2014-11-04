@@ -13,7 +13,7 @@ class ContactForm(Form):
     submit = SubmitField("Send")
 
 
-
+# Sign up - Form to allow users to sign up
 class SignupForm(Form):
     fname = StringField("First name", [validators.DataRequired("Please enter your  first name.")])
     lname = StringField("Last name", [validators.DataRequired("Please enter your  last name.")])
@@ -25,25 +25,42 @@ class SignupForm(Form):
     def __init__(self, *args, **kwargs):
         Form.__init__(self, *args, **kwargs)
 
-    # def validate(self):
-    #     if not Form.validate(self):
-    #         return False
-    #     # << SQL >>
-    #     # SELECT * FROM users
-    #     # WHERE email = self.email.data.lower()
-    #     # LIMIT 1
-    #     user = User.query.filter_by(email=self.email.data.lower()).first()
-    #     if user:
-    #         self.email.errors.append("That email address is already taken")
-    #         return False
-    #     else:
-    #         return True
+    # Validates email to ensure uniqueness
+    def validate(self):
+        if not Form.validate(self):
+            return False
+        # << SQL >>
+        # SELECT * FROM users
+        # WHERE email = self.email.data.lower()
+        # LIMIT 1
+        user = User.query.filter_by(email=self.email.data.lower()).first()
+        if user:
+            self.email.errors.append("That email address is already taken")
+            return False
+        else:
+            return True
 
 
-class LoginForm(Form):
-    openid = StringField('openid', validators=[DataRequired()])
-    remember_me = BooleanField('remember_me', default=False)
+class SigninForm(Form):
+    email = StringField('Email', [validators.DataRequired("Please enter your email"),
+                                  validators.Email("Please enter a valid email")])
+    password = PasswordField('Password', [validators.DataRequired("Please enter your password")])
+    #remember_me = BooleanField('remember_me', default=False)
+    submit = SubmitField("Sign In")
 
+    def __init__(self, *args, **kwargs):
+        Form.__init__(self, *args, **kwargs)
+
+    def validate(self):
+        if not Form.validate(self):
+            return False
+
+        user = User.query.filter_by(email = self.email.data.lower()).first()
+        if user and user.check_password(self.password.data):
+            return True
+        else:
+            self.email.errors.append("Invalid e-mail or password")
+            return False
 
 class EditForm(Form):
     nickname = StringField('nickname', validators=[DataRequired()])

@@ -2,7 +2,7 @@ from flask import Flask, render_template, flash, redirect, session, url_for, req
 from flask.ext.login import login_user, logout_user, current_user, login_required
 
 from app import app, db, lm, oid
-from forms import LoginForm, ContactForm, EditForm, SignupForm
+from forms import SigninForm, ContactForm, EditForm, SignupForm
 from models import User
 from datetime import datetime
 
@@ -74,6 +74,20 @@ def signup():
 
     elif request.method == 'GET':
         return render_template('signup.html', form=form)
+
+
+@app.route('/signin', methods=['GET', 'POST'])
+def signin():
+    form = SigninForm()
+
+    if request.method == 'POST':
+        if form.validate() == False:
+            return render_template('signin.html', form=form)
+        else:
+            session['email'] = form.email.data
+            return redirect(url_for('profile'))
+    elif request.method == 'GET':
+        return render_template('signin.html', form=form)
 
 @app.route('/profile')
 def profile():
