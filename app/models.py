@@ -5,7 +5,6 @@ from hashlib import md5
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nickname = db.Column(db.String(64), index=True, unique=True)
-    password = db.Column(db.String(54))
     email = db.Column(db.String(120), index=True, unique=True)
     posts = db.relationship('Post', backref='author', lazy='dynamic')
     about_me = db.Column(db.String(140))
@@ -24,7 +23,7 @@ class User(db.Model):
         try:
             return unicode(self.id)
         except NameError:
-            return str(self.id)
+            return  str(self.id)
 
     def __repr__(self):
         return '<User % r>' % self.nickname
@@ -52,3 +51,33 @@ class Post(db.Model):
 
     def __repr__(self):
         return '<Post %r>' % (self.body)
+
+class Bids(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    auction_id = db.Column(db.String(120))
+    bdPrice = db.Column(db.Integer,index=True)
+    user_id = db.Column(db.String(120))
+
+class Book(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(120))
+    publisher= db.Column(db.String(120))
+    year = db.Column(db.Integer)
+    subject=db.Column(db.String(120))      
+
+
+
+class Auctions(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    book_id = db.Column(db.Integer)
+    start = db.Column(db.DateTime)
+    end = db.relationship(db.DateTime)
+    user_id = db.Column(db.String(120))
+    min_price = db.Column(db.Float) 
+    bid_id=db.Column(db.Integer)
+
+class Schools(db.Model):
+ 	id=db.Column(db.Integer, primary_key=True)
+ 	name=db.Column(db.String(150))
+ 	city=db.Column(db.String(150))
+ 	province=db.Column(db.String(150))
