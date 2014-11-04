@@ -110,13 +110,14 @@ def logout():
     logout_user()
     return redirect(url_for('index'))
 
-@app.route('/user/<nickname>')
+@app.route('/user/<fname>.<lname>')
 @login_required
-def user(nickname):
-    user = User.query.filter_by(nickname=nickname).first()
+def user(fname, lname):
+    user = User.query.filter_by(email= session['email']).first()
     if user == None:
-        flash('User %s not found.' % nickname)
-        return redirect(url_for('index'))
+        name = fname + ' ' + lname
+        flash('User %s not found.' % name)
+        return redirect(url_for('home'))
     posts = [
         {'author': user, 'body': 'Test post #1'},
         {'author': user, 'body': 'Test post #2'}
