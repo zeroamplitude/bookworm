@@ -2,20 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d201025-d32c-486d-8f03-6deaa2b599b7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SQL/populate.sql" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/workingOn/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/workingOn/old/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/workingOn/old/forms.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/workingOn/old/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/workingOn/old/schema.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/workingOn/old/views.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/workingOn/views.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bookworm.db" afterPath="$PROJECT_DIR$/bookworm.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/__init__.py" afterPath="$PROJECT_DIR$/app/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mod_member/controllers.py" afterPath="$PROJECT_DIR$/app/mod_member/controllers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models.py" afterPath="$PROJECT_DIR$/app/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/member/post.html" afterPath="$PROJECT_DIR$/app/templates/member/post.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/member/profile.html" afterPath="$PROJECT_DIR$/app/templates/member/profile.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Bookworm.iws" />
