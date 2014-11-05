@@ -3,5 +3,9 @@
     <div class="jumbo">
         <h2>Profile</h2>
         <h3>This is {{ session['email'] }}'s profile page</h3>
+    <hr>
+    {% for book in books %}
+        {% include 'member/post.html' %}
+    {% endfor %}
     </div>
 {% endblock %}
