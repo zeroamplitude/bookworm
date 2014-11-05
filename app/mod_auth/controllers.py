@@ -1,9 +1,10 @@
-from flask import Blueprint, session, redirect, url_for, render_template, request
+from flask import Blueprint, session, redirect, url_for, render_template, request, g
 from app import db
 from app.models import User
 from app.mod_auth.forms import SigninForm, SignupForm
 
 mod_auth = Blueprint('auth', __name__, url_prefix='/auth')
+
 
 # Sign up - Registration for new users
 @mod_auth.route('/signup/', methods=['GET', 'POST'])
@@ -47,6 +48,7 @@ def signin():
             return redirect(url_for('member.profile'))
     elif request.method == 'GET':
         return render_template('auth/signin.html', form=form)
+
 
 # Log out - Exit's the user session
 @mod_auth.route('/logout')

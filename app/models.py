@@ -27,24 +27,26 @@ class User(db.Model):
     def check_password(self, password):
         return check_password_hash(self.pwdhash, password)
 
+    def get_id(self):
+        try:
+            return unicode(self.user_id)  # python 2
+        except NameError:
+            return str(self.user_id)
 
 class Book(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     isbn = db.Column(db.Integer)
     title = db.Column(db.String(120))
-    volume = db.Column(db.Integer)
+    # volume = db.Column(db.Integer)
     author = db.Column(db.String(120))
-    publisher = db.Column(db.String(120))
-    year = db.Column(db.Integer)
-    subject = db.Column(db.String(120))
+    # publisher = db.Column(db.String(120))
+    # year = db.Column(db.Integer)
+    # subject = db.Column(db.String(120))
     user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))
 
-    def __init__(self, isbn, title, volume, author, publisher, year, subject):
+    def __init__(self, isbn, title, author, user_id):
         self.isbn = isbn
         self.title = title.title()
-        self.volume = volume
         self.author = author.title()
-        self.publisher = publisher.title()
-        self.year = year
-        self.subject = subject
+        self.user_id = user_id
 
