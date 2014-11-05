@@ -1,6 +1,6 @@
 from flask import Blueprint, session, redirect, url_for, render_template, request
 from app import db
-from app.mod_auth.models import User
+from app.models import User
 from app.mod_auth.forms import SigninForm, SignupForm
 
 mod_auth = Blueprint('auth', __name__, url_prefix='/auth')

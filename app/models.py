@@ -8,7 +8,7 @@ class User(db.Model):
     lname = db.Column(db.String(100))
     email = db.Column(db.String(120), unique=True)
     pwdhash = db.Column(db.String(54))
-    # posts = db.relationship('Post', backref='author', lazy='dynamic')
+    #books = db.relationship('Book', backref='user', lazy='dynamic')
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime)
 
@@ -24,3 +24,24 @@ class User(db.Model):
 
     def check_password(self, password):
         return check_password_hash(self.pwdhash, password)
+
+
+# class Book(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     isbn = db.Column(db.Integer)
+#     title = db.Column(db.String(120))
+#     volume = db.Column(db.Integer)
+#     author = db.Column(db.String(120))
+#     publisher = db.Column(db.String(120))
+#     year = db.Column(db.Integer)
+#     subject = db.Column(db.String(120))
+#     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+#
+#     def __init__(self, isbn, title, volume, author, publisher, year, subject):
+#         self.isbn = isbn
+#         self.title = title.title()
+#         self.volume = volume
+#         self.author = author.title()
+#         self.publisher = publisher.title()
+#         self.year = year
+#         self.subject = subject
