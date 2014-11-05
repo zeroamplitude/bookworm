@@ -23,22 +23,9 @@ def profile():
     if user is None:
         return redirect(url_for('auth.signin'))
     else:
-        #uid = db.session.query(User.user_id).filter_by(User.email == user)
-        # s = select(
-        #     [
-        #         Book.title,
-        #         Book.isbn,
-        #         Book.author
-        #     ]
-        # ).where(
-        #     and_(
-        #         Book.user_id == User.user_id,
-        #         User.email == user
-        #     )
-        # )
-        # books = conn.execute(s)
-        books = User.query.filter_by(email=session['email']).join(Book)
-            #db.session.query(Book.isbn)
+        books = db.session.query(Book).\
+            filter(User.email == session['email']).\
+            filter(Book.user_id == User.user_id)
         return render_template('member/profile.html', books=books)
 
 
