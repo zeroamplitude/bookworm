@@ -27,6 +27,7 @@ def testdb():
     else:
         return 'Something is broken.'
 
+
 # Home - Home page
 @app.route('/')
 @app.route('/home')
@@ -53,6 +54,31 @@ def contact():
     elif request.method == 'GET':
         return render_template('contact.html', form=form)
 
+
+# Welcome - new or unlogged user page
+@app.route('/welcome', methods=['GET', 'Post'])
+def welcome():
+    newuser = SignupForm
+    olduser = SigninForm
+
+    if request.method == 'POST':
+        if newuser:
+            if not newuser.validate():
+                return render_template('contact.html', form=newuser)
+            else:
+                nuser = User(newuser.fname.data, newuser.lname.data, newuser.email.data, newuser.password.data)
+                db.session.add(nuser)
+                db.commit()
+        elif olduser:
+            if not olduser.validate():
+                return render_template('signup.html', form=olduser)
+            else:
+                session['email'] = olduser.email.data
+                return redirect(url_for('profile.html'))
+    elif request.method == 'GET':
+        return render_template('welcome.html', form=newuser)
+
+
 # Sign up - Registration for new users
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -75,13 +101,12 @@ def signup():
     elif request.method == 'GET':
         return render_template('signup.html', form=form)
 
-
 @app.route('/signin', methods=['GET', 'POST'])
 def signin():
     form = SigninForm()
 
     if request.method == 'POST':
-        if form.validate() == False:
+        if not form.validate():
             return render_template('signin.html', form=form)
         else:
             session['email'] = form.email.data
@@ -107,14 +132,18 @@ def profile():
 
 @app.route('/logout')
 def logout():
-    logout_user()
-    return redirect(url_for('index'))
+    if 'email' not in session:
+        return redirect(url_for('signin'))
+
+    session.pop('email', None)
+    return redirect(url_for('home'))
+
 
 @app.route('/user/<fname>.<lname>')
 @login_required
 def user(fname, lname):
     user = User.query.filter_by(email= session['email']).first()
-    if user == None:
+    if user is None:
         name = fname + ' ' + lname
         flash('User %s not found.' % name)
         return redirect(url_for('home'))

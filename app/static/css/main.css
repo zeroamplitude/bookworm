@@ -29,7 +29,6 @@ header h1.logo {
   margin: 0;
   font-size: 1.7em;
   color: #fff;
-  text-transform: uppercase;
   float: left;
 }
  
@@ -177,4 +176,46 @@ form input#password {
 
 form input#password {
   margin-bottom: 10px;
+}
+
+
+
+.sigin {
+    float:left;
+    margin-top: 8px;
+}
+
+.signin li {
+    display: inline;
+}
+
+.sigin li + li {
+    margin-right: 35px;
+}
+
+.signin li a {
+    color: #999;
+    text-decoration: none;
+}
+
+/*
+ * Display navigation links inline
+ */
+
+.bmenu {
+    float: center;
+    margin-bottom: 8px;
+}
+
+.bmenu li {
+    display: inline;
+}
+
+.bmenu li + li {
+    margin-left: 35px;
+}
+
+.bmenu li a {
+    color: #999;
+    text-decoration: none;
 }
