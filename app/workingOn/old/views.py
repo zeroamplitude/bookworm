@@ -1,7 +1,7 @@
-from flask import render_template, flash, redirect, session, url_for, request, g
+from flask import render_template, flash, redirect, session, url_for, g
 
 from app import app, db  # lm, oid
-from app.forms import ContactForm, EditForm
+from app.workingOn.old.forms import EditForm
 from mod_auth.models import User
 
 
@@ -27,31 +27,7 @@ def testdb():
         return 'Something is broken.'
 
 
-# Home - Home page
-@app.route('/')
-@app.route('/home')
-def home():
-    return render_template('home.html')
 
-# About - Provides basic information about bookworm
-@app.route('/about')
-def about():
-    return render_template('about.html')
-
-# Contact - Allows user to contact web admin
-@app.route('/contact', methods=['GET', 'POST'])
-def contact():
-    form = ContactForm()
-
-    if request.method == 'POST':
-        if not form.validate():
-            flash('All fields are required.')
-            return render_template('contact.html', form=form)
-        else:
-            # << Mail method not implemented >>
-            return 'Form posted.'
-    elif request.method == 'GET':
-        return render_template('contact.html', form=form)
 
 
 

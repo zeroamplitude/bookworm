@@ -11,11 +11,11 @@ def signup():
     form = SignupForm()
 
     if 'email' in session:
-        return redirect(url_for('profile'))
+        return redirect(url_for('member.profile'))
 
     if request.method == 'POST':
         if not form.validate():
-            return render_template('signup.html', form=form)
+            return render_template('auth/signup.html', form=form)
         else:
             # << SQL >>
             # INSERT INTO users (firstname, lastname, email, pwdhash)
@@ -25,7 +25,7 @@ def signup():
             db.session.commit()
 
             session['email'] = newuser.email
-            return redirect(url_for('profile'))
+            return redirect(url_for('member.profile'))
 
     elif request.method == 'GET':
         return render_template('auth/signup.html', form=form)
@@ -37,14 +37,14 @@ def signin():
     form = SigninForm()
 
     if 'email' in session:
-        return redirect(url_for('profile'))
+        return redirect(url_for('member.profile'))
 
     if request.method == 'POST':
         if not form.validate():
             return render_template('auth/signin.html', form=form)
         else:
             session['email'] = form.email.data
-            return redirect(url_for('profile'))
+            return redirect(url_for('member.profile'))
     elif request.method == 'GET':
         return render_template('auth/signin.html', form=form)
 
@@ -52,7 +52,7 @@ def signin():
 @mod_auth.route('/logout')
 def logout():
     if 'email' not in session:
-        return redirect(url_for('auth/signin'))
+        return redirect(url_for('auth.signin'))
 
     session.pop('email', None)
-    return redirect(url_for('home'))
+    return redirect(url_for('public.home'))

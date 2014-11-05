@@ -3,7 +3,7 @@ from models import User
 
 from flask.ext.login import logout_user, login_required
 from app import app, db
-from app.forms import ContactForm, EditForm, SignupForm
+from app.workingOn.old.forms import ContactForm, EditForm, SignupForm
 
 
 @app.errorhandler(404)

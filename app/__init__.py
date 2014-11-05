@@ -14,9 +14,12 @@ def not_found(error):
 
 # Import modules and components from blueprints
 from app.mod_auth.controllers import mod_auth as auth_module
-from app.views import home
+from app.mod_public.controllers import mod_public as public_module
+from app.mod_member.controllers import mod_member as member_module
 
 
 # Register blueprints
 app.register_blueprint(auth_module)
+app.register_blueprint(public_module)
+app.register_blueprint(member_module)
 
