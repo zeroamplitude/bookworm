@@ -15,9 +15,9 @@
 
                         {% if 'email' in session %}
                         <li><a href="{{ url_for('profile') }}">Profile</a></li>
-                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                        <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
                         {% else %}
-                        <li><a href="{{ url_for('signin') }}">Sign In</a></li>
+                        <li><a href="{{ url_for('auth.signin') }}">Sign In</a></li>
                         {% endif %}
                     </ul>
                 </nav></strong>

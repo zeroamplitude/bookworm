@@ -1,11 +1,11 @@
 import os
 
-basedir = os.path.abspath(os.path.dirname(__file__))
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 
 # Database connections
-SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'bookworm.db')
-SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'bookworm.db')
+SQLALCHEMY_MIGRATE_REPO = os.path.join(BASE_DIR, 'db_repository')
 
 
 # Application threads

@@ -12,7 +12,7 @@
         <div class="flash">{{ message }}</div>
     {% endfor %}
 
-    <form action="{{ url_for('signin') }}" method="post">
+    <form action="{{ url_for('auth.signin') }}" method="post">
         {{ form.hidden_tag() }}
 
         {{ form.email.label }}
@@ -23,7 +23,7 @@
 
         <ul class="signin">
             <li>{{ form.submit }}</li>
-            <li>Or if you don't have account <a href="{{ url_for('signup') }}"> Register</a></li>
+            <li>Or if you don't have account <a href="{{ url_for('auth.signup') }}"> Register</a></li>
         </ul>
     </form>
 

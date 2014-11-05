@@ -102,7 +102,7 @@ def abs__file__():
     for m in sys.modules.values():
         if ((_is_jython and not isinstance(m, ModuleType)) or
             hasattr(m, '__loader__')):
-            # only modules need the abspath in Jython. and don't mess
+            # only mod_auth need the abspath in Jython. and don't mess
             # with a PEP 302-supplied __file__
             continue
         f = getattr(m, '__file__', None)
@@ -360,7 +360,7 @@ def addusersitepackages(known_paths):
 
 
 def setBEGINLIBPATH():
-    """The OS/2 EMX port has optional extension modules that do double duty
+    """The OS/2 EMX port has optional extension mod_auth that do double duty
     as DLLs (and must use the .DLL file extension) for other extensions.
     The library search path needs to be amended so these will be found
     during module import.  Use BEGINLIBPATH so that these are at the start

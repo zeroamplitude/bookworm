@@ -1,11 +1,9 @@
-from flask import Flask, render_template, flash, redirect, session, url_for, request, g
-from flask.ext.login import login_user, logout_user, current_user, login_required
-
-from app import app, db, lm, oid
-from forms import LoginForm, ContactForm, EditForm, SignupForm
+from flask import render_template, flash, redirect, url_for, request, g
 from models import User
-from datetime import datetime
 
+from flask.ext.login import logout_user, login_required
+from app import app, db
+from app.forms import ContactForm, EditForm, SignupForm
 
 
 @app.errorhandler(404)
