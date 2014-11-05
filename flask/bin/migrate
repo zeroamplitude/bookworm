@@ -1,0 +1,4 @@
+#!/home/nicholas/git/Bookworm/flask/bin/python
+from migrate.versioning.shell import main
+
+main()
