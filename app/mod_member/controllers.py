@@ -19,7 +19,7 @@ def profile():
         # << SQL >>
         # SELECT * FROM users WHERE email = session['email'];
     user = User.query.filter_by(email=session['email']).first()
-    g.user = User.query(User.user_id).filter(User.email == session['email'])
+    #g.user = User.query(User.user_id).filter(User.email == session['email'])
     print user
 
     if user is None:

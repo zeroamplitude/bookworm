@@ -13,7 +13,7 @@ class UploadBookForm(Form):
     # publisher = StringField("Publisher")
     # year = IntegerField("Year")
     # subject = StringField("Subject")
-    user_id = g.user
+    user_id = User.user_id
     submit = SubmitField("Upload Book")
 
     def __init__(self, *args, **kwargs):
