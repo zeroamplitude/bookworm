@@ -4,7 +4,7 @@ import unittest
 
 from config import basedir
 from app import app, db
-from app.models import User
+from app.workingOn.old.models import User
 
 
 class TestCase(unittest.TestCase):

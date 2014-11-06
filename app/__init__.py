@@ -1,25 +1,32 @@
-import os
-from flask import Flask
+from flask import Flask, render_template
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.login import LoginManager
-from flask.ext.openid import OpenID
-from flask.ext.mail import Message, Mail
-from config import basedir, ADMINS, MAIL_SERVER, MAIL_PORT, MAIL_USERNAME, MAIL_PASSWORD
+
+
+
 
 app = Flask(__name__)
 app.config.from_object('config')
 db = SQLAlchemy(app)
 
 
+lm = LoginManager()
+lm.init_app(app)
+lm.login_view = 'auth/signin'
+
+# Sample HTTP error handling
+@app.errorhandler(404)
+def not_found(error):
+    return render_template('404.html'), 404
 
 
+# Import modules and components from blueprints
+from app.mod_auth.controllers import mod_auth as auth_module
+from app.mod_public.controllers import mod_public as public_module
+from app.mod_member.controllers import mod_member as member_module
 
 
-# lm = LoginManager()
-# lm.init_app(app)
-# lm.login_view = 'login'
-# oid = OpenID(app, os.path.join(basedir, 'tmp'))
-
-
-
-from app import views, models
+# Register blueprints
+app.register_blueprint(auth_module)
+app.register_blueprint(public_module)
+app.register_blueprint(member_module)

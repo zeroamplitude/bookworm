@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Add Book</h2>
+
+    {% for message in form.isbn.errors %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.title.errors %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.author.errors %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    <form action="{{ url_for('member.newbook') }}" method="post">
+        {{ form.hidden_tag() }}
+
+        {{ form.isbn.label }}
+        {{ form.isbn }}
+
+        {{ form.title.label }}
+        {{ form.title }}
+
+        {{ form.author.label }}
+        {{ form.author }}
+
+        {{ form.submit }}
+    </form>
+{% endblock %}
