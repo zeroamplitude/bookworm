@@ -3,5 +3,16 @@
     <div class="jumbo">
         <h2>Welcome to Bookworm</h2>
         <h3>This is the home page for Bookworm</h3>
+        <hr>
+        <form action="{{ url_for('public.search') }}" method="post">
+            {{ form.hidden_tag() }}
+            {{ form.title.label }}
+            {{ form.title }}
+            {{ form.submit }}
+        </form>
+        <hr>
+        {% for book in books %}
+        {% include 'public/post.html' %}
+        {% endfor %}
     </div>
 {% endblock %}
