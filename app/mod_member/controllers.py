@@ -1,4 +1,5 @@
 from flask import Blueprint, session, url_for, redirect, render_template, request, g
+from sqlalchemy import null
 from app import db
 from app.mod_member.forms import UploadBookForm
 from app.models import User, Book
@@ -19,7 +20,6 @@ def profile():
         # << sql >>
         # SELECT * FROM users WHERE email = session['email'];
     user = User.query.filter_by(email=session['email']).first()
-    #g.user = User.query(User.user_id).filter(User.email == session['email'])
     print user
 
     if user is None:
@@ -40,11 +40,13 @@ def newbook():
         return redirect(url_for('auth.signin'))
 
     if request.method == 'POST':
-
+        uid = db.session.query(User.user_id).filter(User.email == session['email']).scalar()
         book = Book(isbn=form.isbn.data, title=form.title.data,
-                    author=form.author.data, user_id=form.user_id.data)
+                    author=form.author.data, user_id=uid)
         db.session.add(book)
         db.session.commit()
+
+        return redirect(url_for('member.profile'))
 
     elif request.method == 'GET':
         return render_template('member/newbook.html', form=form)
