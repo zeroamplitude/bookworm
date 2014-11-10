@@ -3,7 +3,6 @@ from hashlib import md5
 from app import db
 
 
-
 class User(db.Model):
     user_id = db.Column(db.Integer, index=True, primary_key=True)
     fname = db.Column(db.String(100))
@@ -33,6 +32,7 @@ class User(db.Model):
         except NameError:
             return str(self.user_id)
 
+
 class Book(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     isbn = db.Column(db.Integer)
@@ -49,4 +49,3 @@ class Book(db.Model):
         self.title = title.title()
         self.author = author.title()
         self.user_id = user_id
-
