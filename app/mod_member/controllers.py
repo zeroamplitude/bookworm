@@ -13,12 +13,12 @@ def before_request():
 # Profile -
 @mod_member.route('/profile/')
 def profile():
-    if 'email' not in session:
+    if 'uID' not in session:
         return redirect(url_for('auth.signin'))
 
         # << SQL >>
         # SELECT * FROM users WHERE email = session['email'];
-    user = User.query.filter_by(email=session['email']).first()
+    user = User.query.filter_by(user_id=session['uID']).first()
     #g.user = User.query(User.user_id).filter(User.email == session['email'])
     print user
 

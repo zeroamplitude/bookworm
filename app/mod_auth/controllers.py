@@ -11,7 +11,7 @@ mod_auth = Blueprint('auth', __name__, url_prefix='/auth')
 def signup():
     form = SignupForm()
 
-    if 'email' in session:
+    if 'uID' in session:
         return redirect(url_for('member.profile'))
 
     if request.method == 'POST':
@@ -25,7 +25,7 @@ def signup():
             db.session.add(newuser)
             db.session.commit()
 
-            session['email'] = newuser.email
+            session['uID'] = newuser.id
             return redirect(url_for('member.profile'))
 
     elif request.method == 'GET':
@@ -37,14 +37,15 @@ def signup():
 def signin():
     form = SigninForm()
 
-    if 'email' in session:
+    if 'uID' in session:
         return redirect(url_for('member.profile'))
 
     if request.method == 'POST':
         if not form.validate():
             return render_template('auth/signin.html', form=form)
         else:
-            session['email'] = form.email.data
+            session['uID'] = db.session.query(User.user_id). \
+                filter(User.email == form.email.data).first()
             return redirect(url_for('member.profile'))
     elif request.method == 'GET':
         return render_template('auth/signin.html', form=form)
@@ -53,8 +54,8 @@ def signin():
 # Log out - Exit's the user session
 @mod_auth.route('/logout')
 def logout():
-    if 'email' not in session:
+    if 'uID' not in session:
         return redirect(url_for('auth.signin'))
 
-    session.pop('email', None)
+    session.pop('uID', None)
     return redirect(url_for('public.home'))
