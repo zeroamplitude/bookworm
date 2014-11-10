@@ -18,7 +18,7 @@ class SignupForm(Form):
     def validate(self):
         if not Form.validate(self):
             return False
-        # << SQL >>
+        # << sql >>
         # SELECT * FROM users
         # WHERE email = self.email.data.lower()
         # LIMIT 1
@@ -44,7 +44,7 @@ class SigninForm(Form):
         if not Form.validate(self):
             return False
 
-        user = User.query.filter_by(email = self.email.data.lower()).first()
+        user = User.query.filter_by(email=self.email.data.lower()).first()
         if user and user.check_password(self.password.data):
             return True
         else:

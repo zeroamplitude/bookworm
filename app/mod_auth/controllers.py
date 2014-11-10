@@ -18,7 +18,7 @@ def signup():
         if not form.validate():
             return render_template('auth/signup.html', form=form)
         else:
-            # << SQL >>
+            # << sql >>
             # INSERT INTO users (firstname, lastname, email, pwdhash)
             # VALUES (form.firstname.data, form.lastname.data, form.email.data, form.password.data)
             newuser = User(form.fname.data, form.lname.data, form.email.data, form.password.data)
