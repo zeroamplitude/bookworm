@@ -2,9 +2,107 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d201025-d32c-486d-8f03-6deaa2b599b7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bookworm.db" afterPath="$PROJECT_DIR$/bookworm.db" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/__init__.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/SQL/populate.sql" afterPath="$PROJECT_DIR$/sql/populate.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/SQL/populatebooks.sql" afterPath="$PROJECT_DIR$/sql/populatebooks.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/SQL/populatepeople.sql" afterPath="$PROJECT_DIR$/sql/populatepeople.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/bookworm.db" afterPath="$PROJECT_DIR$/database/bookworm.db" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/db_create.py" afterPath="$PROJECT_DIR$/database/db_create.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/db_downgrade.py" afterPath="$PROJECT_DIR$/database/db_downgrade.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/db_migrate.py" afterPath="$PROJECT_DIR$/database/db_migrate.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/db_upgrade.py" afterPath="$PROJECT_DIR$/database/db_upgrade.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/flask_sqlalchemy/__init__.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/flask_sqlalchemy/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/engine/__init__.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/engine/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/ext/declarative/__init__.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/ext/declarative/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlparse/__init__.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlparse/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/annotation.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/annotation.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/migrate/versioning/api.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/migrate/versioning/api.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/flask/app.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/flask/app.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/testing/assertsql.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/testing/assertsql.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/attributes.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/attributes.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/drizzle/base.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/drizzle/base.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/firebird/base.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/firebird/base.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/mssql/base.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/mssql/base.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/mysql/base.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/mysql/base.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/oracle/base.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/oracle/base.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/postgresql/base.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/postgresql/base.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/base.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/base.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/base.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/base.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/ext/compiler.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/ext/compiler.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/compiler.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/compiler.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.py" afterPath="$PROJECT_DIR$/config.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/postgresql/constraints.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/postgresql/constraints.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/openid/consumer/consumer.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/openid/consumer/consumer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mod_auction/controllers.py" afterPath="$PROJECT_DIR$/app/mod_auction/controllers.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mod_auth/controllers.py" afterPath="$PROJECT_DIR$/app/mod_auth/controllers.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mod_member/controllers.py" afterPath="$PROJECT_DIR$/app/mod_member/controllers.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/oracle/cx_oracle.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/oracle/cx_oracle.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/engine/default.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/engine/default.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/default_comparator.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/default_comparator.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/descriptor_props.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/descriptor_props.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/dml.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/dml.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/elements.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/elements.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/events.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/events.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/events.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/events.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/exc.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/exc.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/expression.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/expression.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlparse/filters.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlparse/filters.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/migrate/changeset/databases/firebird.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/migrate/changeset/databases/firebird.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlparse/formatter.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlparse/formatter.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mod_auction/forms.py" afterPath="$PROJECT_DIR$/app/mod_auction/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mod_auth/forms.py" afterPath="$PROJECT_DIR$/app/mod_auth/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/functions.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/functions.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlparse/functions.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlparse/functions.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/mysql/gaerdbms.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/mysql/gaerdbms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlparse/engine/grouping.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlparse/engine/grouping.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/ext/horizontal_shard.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/ext/horizontal_shard.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/postgresql/hstore.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/postgresql/hstore.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/ext/hybrid.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/ext/hybrid.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/mssql/information_schema.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/mssql/information_schema.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/interfaces.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/interfaces.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/engine/interfaces.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/engine/interfaces.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/interfaces.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/interfaces.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/postgresql/json.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/postgresql/json.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlparse/keywords.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlparse/keywords.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlparse/lexer.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlparse/lexer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/mapper.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/mapper.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models.py" afterPath="$PROJECT_DIR$/app/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/ext/mutable.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/ext/mutable.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/connectors/mxodbc.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/connectors/mxodbc.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/mssql/mxodbc.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/mssql/mxodbc.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/connectors/mysqldb.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/connectors/mysqldb.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/operators.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/operators.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/ext/orderinglist.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/ext/orderinglist.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/pool.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/pool.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/properties.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/properties.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/mssql/pymssql.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/mssql/pymssql.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/connectors/pyodbc.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/connectors/pyodbc.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/mssql/pyodbc.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/mssql/pyodbc.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/mysql/pyodbc.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/mysql/pyodbc.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/query.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/query.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/engine/reflection.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/engine/reflection.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/relationships.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/relationships.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/engine/result.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/engine/result.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/schema.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/schema.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/selectable.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/selectable.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/migrate/versioning/script/sql.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/migrate/versioning/script/sql.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlparse/sql.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlparse/sql.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/openid/store/sqlstore.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/openid/store/sqlstore.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/sqltypes.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/sqltypes.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/strategies.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/strategies.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/strategy_options.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/strategy_options.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/migrate/tests/versioning/test_script.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/migrate/tests/versioning/test_script.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/migrate/tests/versioning/test_shell.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/migrate/tests/versioning/test_shell.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlparse/tokens.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlparse/tokens.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/type_api.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/sql/type_api.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/util.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/orm/util.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlparse/utils.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlparse/utils.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/mysql/zxjdbc.py" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/sqlalchemy/dialects/mysql/zxjdbc.py" />
     </list>
     <ignored path="Bookworm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,10 +129,34 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2642405" vertical-offset="613" max-vertical-offset="1245">
-              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1230">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="74" selection-end-column="22" />
               <folding>
                 <element signature="e#0#73#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controllers.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/mod_auth/controllers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1005">
+              <caret line="29" column="50" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
+              <folding>
+                <element signature="e#0#84#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controllers.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/mod_member/controllers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="945">
+              <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#84#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -78,7 +200,6 @@
         <option value="$PROJECT_DIR$/app/static/css/main.css" />
         <option value="$PROJECT_DIR$/app/modules/public.py" />
         <option value="$PROJECT_DIR$/app/workingOn/old/forms.py" />
-        <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/app/workingOn/__init__.py" />
         <option value="$PROJECT_DIR$/app/mod_auth/__init__.py" />
         <option value="$PROJECT_DIR$/app/mod_public/__init__.py" />
@@ -99,9 +220,7 @@
         <option value="$PROJECT_DIR$/app/templates/member/profile.html" />
         <option value="$PROJECT_DIR$/app/templates/member/newbook.html" />
         <option value="$PROJECT_DIR$/app/__init__.py" />
-        <option value="$PROJECT_DIR$/app/mod_auth/controllers.py" />
         <option value="$PROJECT_DIR$/app/mod_member/forms.py" />
-        <option value="$PROJECT_DIR$/app/mod_member/controllers.py" />
         <option value="$PROJECT_DIR$/populatepeople.sql" />
         <option value="$PROJECT_DIR$/app/templates/member/post.html" />
         <option value="$PROJECT_DIR$/app/templates/dist/examples/Off Canvas Template for Bootstrap.html" />
@@ -109,7 +228,10 @@
         <option value="$PROJECT_DIR$/app/templates/public/home.html" />
         <option value="$PROJECT_DIR$/app/mod_public/forms.py" />
         <option value="$PROJECT_DIR$/app/mod_public/controllers.py" />
+        <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/app/models.py" />
+        <option value="$PROJECT_DIR$/app/mod_auth/controllers.py" />
+        <option value="$PROJECT_DIR$/app/mod_member/controllers.py" />
       </list>
     </option>
   </component>
@@ -148,10 +270,6 @@
               <option name="myItemId" value="Bookworm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -177,6 +295,42 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bookworm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bookworm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mod_member" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bookworm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bookworm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mod_auth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -199,19 +353,20 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/database" />
       <recent name="$PROJECT_DIR$/app/templates/public" />
       <recent name="$PROJECT_DIR$/app/workingOn" />
       <recent name="$PROJECT_DIR$/app/templates/workingOn" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/database" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/app/templates/dist" />
       <recent name="$PROJECT_DIR$/app/templates/dist/static" />
       <recent name="$PROJECT_DIR$/app/mod_member" />
-      <recent name="$PROJECT_DIR$/app/workingOn/old" />
-      <recent name="$PROJECT_DIR$/app/templates/member" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.db_migrate">
+  <component name="RunManager" selected="Python.run">
     <configuration default="false" name="run" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -245,26 +400,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Bookworm" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/db_migrate.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Python Console" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Bookworm" />
-      <option name="SCRIPT_NAME" value="/Python Console" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/database/db_migrate.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <RunnerSettings RunnerId="PythonRunner" />
@@ -303,6 +439,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Bookworm" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/mod_public/controllers.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="db_create" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/database" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Bookworm" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/database/db_create.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <RunnerSettings RunnerId="PythonRunner" />
@@ -434,17 +589,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.run" />
       <item index="1" class="java.lang.String" itemvalue="Python.db_migrate" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Python Console" />
-      <item index="3" class="java.lang.String" itemvalue="Python.forms" />
-      <item index="4" class="java.lang.String" itemvalue="Python.controllers" />
+      <item index="2" class="java.lang.String" itemvalue="Python.forms" />
+      <item index="3" class="java.lang.String" itemvalue="Python.controllers" />
+      <item index="4" class="java.lang.String" itemvalue="Python.db_create" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.db_migrate" />
-        <item index="1" class="java.lang.String" itemvalue="Python.run" />
-        <item index="2" class="java.lang.String" itemvalue="Python.controllers" />
-        <item index="3" class="java.lang.String" itemvalue="Python.forms" />
-        <item index="4" class="java.lang.String" itemvalue="Python.Python Console" />
+        <item index="0" class="java.lang.String" itemvalue="Python.run" />
+        <item index="1" class="java.lang.String" itemvalue="Python.db_migrate" />
+        <item index="2" class="java.lang.String" itemvalue="Python.db_create" />
+        <item index="3" class="java.lang.String" itemvalue="Python.controllers" />
+        <item index="4" class="java.lang.String" itemvalue="Python.forms" />
       </list>
     </recent_temporary>
   </component>
@@ -510,7 +665,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="created a post template" />
     <MESSAGE value="added edit profile feature" />
     <MESSAGE value="added error handling for nickname collisions" />
     <MESSAGE value="added unit tests for avatar url and unique name constraint" />
@@ -535,7 +689,8 @@
     <MESSAGE value="it works finally...................!!!!!!!!!!!!! Yea!" />
     <MESSAGE value="added bootstrap" />
     <MESSAGE value="created test directories" />
-    <option name="LAST_COMMIT_MESSAGE" value="created test directories" />
+    <MESSAGE value="updated modules: Auction and Bid tables" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated modules: Auction and Bid tables" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -610,20 +765,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db_create.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.01618123" vertical-offset="0" max-vertical-offset="927">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db_migrate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.050055616" vertical-offset="0" max-vertical-offset="899">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/flask_sqlalchemy/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33224222" vertical-offset="6262" max-vertical-offset="13650">
@@ -642,13 +783,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.024549918" vertical-offset="0" max-vertical-offset="611">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -732,10 +866,64 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/db_create.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2136076" vertical-offset="0" max-vertical-offset="632">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="632">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/db_migrate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15957446" vertical-offset="0" max-vertical-offset="940">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="9" />
+          <folding>
+            <element signature="e#19#29#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mod_auth/controllers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1005">
+          <caret line="29" column="50" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mod_member/controllers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="945">
+          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2642405" vertical-offset="613" max-vertical-offset="1245">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1230">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="74" selection-end-column="22" />
           <folding>
             <element signature="e#0#73#0" expanded="true" />
           </folding>

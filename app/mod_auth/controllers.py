@@ -18,14 +18,15 @@ def signup():
         if not form.validate():
             return render_template('auth/signup.html', form=form)
         else:
-            # << SQL >>
+            # << sql >>
             # INSERT INTO users (firstname, lastname, email, pwdhash)
             # VALUES (form.firstname.data, form.lastname.data, form.email.data, form.password.data)
             newuser = User(form.fname.data, form.lname.data, form.email.data, form.password.data)
             db.session.add(newuser)
             db.session.commit()
 
-            session['uID'] = newuser.id
+            session['uID'] = newuser.user_id
+            session['email'] = newuser.email
             return redirect(url_for('member.profile'))
 
     elif request.method == 'GET':
@@ -44,8 +45,8 @@ def signin():
         if not form.validate():
             return render_template('auth/signin.html', form=form)
         else:
-            session['uID'] = db.session.query(User.user_id). \
-                filter(User.email == form.email.data).first()
+            session['uID'] = User.user_id
+            session['email'] = User.email
             return redirect(url_for('member.profile'))
     elif request.method == 'GET':
         return render_template('auth/signin.html', form=form)

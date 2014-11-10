@@ -18,7 +18,7 @@ class SignupForm(Form):
     def validate(self):
         if not Form.validate(self):
             return False
-        # << SQL >>
+        # << sql >>
         # SELECT * FROM users
         # WHERE email = self.email.data.lower()
         # LIMIT 1

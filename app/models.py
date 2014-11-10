@@ -18,7 +18,6 @@ class User(db.Model):
         self.email = email.lower()
         self.set_password(password)
 
-        # << password hash not implemented >>
     def set_password(self, password):
         self.pwdhash = generate_password_hash(password)
 
@@ -36,11 +35,11 @@ class Book(db.Model):
     book_id = db.Column(db.Integer, primary_key=True)
     isbn = db.Column(db.Integer)
     title = db.Column(db.String(120))
-    # volume = db.Column(db.Integer)
+    volume = db.Column(db.Integer)
     author = db.Column(db.String(120))
-    # publisher = db.Column(db.String(120))
-    # year = db.Column(db.Integer)
-    # subject = db.Column(db.String(120))
+    publisher = db.Column(db.String(120))
+    year = db.Column(db.Integer)
+    subject = db.Column(db.String(120))
     user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))
     auc_id = db.relationship('Auction', backref='book', lazy='dynamic')
 
