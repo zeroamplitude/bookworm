@@ -1,7 +1,5 @@
 from werkzeug.security import generate_password_hash, check_password_hash
-from hashlib import md5
 from app import db
-
 
 
 class User(db.Model):
@@ -33,8 +31,9 @@ class User(db.Model):
         except NameError:
             return str(self.user_id)
 
+
 class Book(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    book_id = db.Column(db.Integer, primary_key=True)
     isbn = db.Column(db.Integer)
     title = db.Column(db.String(120))
     # volume = db.Column(db.Integer)
@@ -43,10 +42,36 @@ class Book(db.Model):
     # year = db.Column(db.Integer)
     # subject = db.Column(db.String(120))
     user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))
+    auc_id = db.relationship('Auction', backref='book', lazy='dynamic')
 
     def __init__(self, isbn, title, author, user_id):
         self.isbn = isbn
         self.title = title.title()
         self.author = author.title()
         self.user_id = user_id
+
+
+class Auction(db.Model):
+    auc_id = db.Column(db.Integer, primary_key=True)
+    book_id = db.Column(db.Integer, db.ForeignKey('book.book_id'))
+    start_time = db.Column(db.DateTime)
+    end_time = db.Column(db.DateTime)
+    highest_bid = db.relationship('Bid', backref='auction', lazy='dynamic')
+
+    def __init__(self, book_id, start_time, end_time):
+        self.book_id = book_id
+        self.start_time = start_time
+        self.end_time = end_time
+
+
+class Bid(db.Model):
+    bid_id = db.Column(db.Integer, primary_key=True)
+    auc_id = db.Column(db.Integer, db.ForeignKey('auction.auc_id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))
+    bid = db.Column(db.Float, unique=True)
+
+    def __init__(self, auc_id, user_id, bid):
+        self.auc_id = auc_id
+        self.user_id = user_id
+        self.bid = bid
 
