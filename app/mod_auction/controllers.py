@@ -7,21 +7,20 @@ mod_auction = Blueprint('auction', __name__, url_prefix='/auction')
 
 
 # Sign up - Registration for new users
-@mod_auction.route('/book', methods=['GET', 'POST'])
+@mod_auction.route('/book/<bookID>', methods=['GET', 'POST'])
 def book(bookID):
     form = Bid()
-
+    bookS = db.session.query(Book).filter(Book.book_id == bookID).scalar()
     if request.method == 'POST':
         if not form.validate():
-            return render_template('auction/book.html', form=form)
+            return render_template('auction/book.html', books=bookS)
         else:
             newBid = Bid(form.bidPrice.data)
             db.session.add(newBid)
             db.session.commit()
 
-            return render_template('auction/book.html', form=form)
+            return render_template('auction/book.html', books=bookS)
     
     elif request.method == 'GET':
-        bookS = db.session.query(Book).filter(Book.book_id == bookID)
-        return render_template('auction/book.html', form=form, book=bookS)
+        return render_template('auction/book.html', book=bookS)
 

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d201025-d32c-486d-8f03-6deaa2b599b7" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/auction/book.html" afterPath="$PROJECT_DIR$/app/templates/auction/book.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mod_auction/controllers.py" afterPath="$PROJECT_DIR$/app/mod_auction/controllers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/member/profile.html" afterPath="$PROJECT_DIR$/app/templates/member/profile.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Bookworm.iws" />
@@ -46,29 +46,17 @@
             <entry file="file://$PROJECT_DIR$/app/templates/member/profile.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="-4.5652175" vertical-offset="0" max-vertical-offset="270">
-                  <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
+                  <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="controllers.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/mod_auction/controllers.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.24861878" vertical-offset="0" max-vertical-offset="543">
-                  <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-                  <folding>
-                    <element signature="e#0#81#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="book.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="book.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/templates/auction/book.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.65217394" vertical-offset="0" max-vertical-offset="570">
-                  <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+                <state vertical-scroll-proportion="-0.067307696" vertical-offset="65" max-vertical-offset="585">
+                  <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
                   <folding />
                 </state>
               </provider>
@@ -78,10 +66,22 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="controllers.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/mod_auction/controllers.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.35911602" vertical-offset="0" max-vertical-offset="543">
+                  <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#81#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.15653776" vertical-offset="335" max-vertical-offset="1275">
+                <state vertical-scroll-proportion="0.0" vertical-offset="335" max-vertical-offset="1275">
                   <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
                   <folding />
                 </state>
@@ -152,12 +152,12 @@
         <option value="$PROJECT_DIR$/app/mod_auth/controllers.py" />
         <option value="$PROJECT_DIR$/app/templates/auth/signup.html" />
         <option value="$PROJECT_DIR$/app/templates/base.html" />
-        <option value="$PROJECT_DIR$/app/templates/auction/book.html" />
         <option value="$PROJECT_DIR$/app/templates/member/newbook.html" />
         <option value="$PROJECT_DIR$/app/__init__.py" />
         <option value="$PROJECT_DIR$/app/mod_member/forms.py" />
         <option value="$PROJECT_DIR$/app/mod_member/controllers.py" />
         <option value="$PROJECT_DIR$/app/templates/member/profile.html" />
+        <option value="$PROJECT_DIR$/app/templates/auction/book.html" />
         <option value="$PROJECT_DIR$/app/mod_auction/controllers.py" />
       </list>
     </option>
@@ -632,7 +632,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="added contact page" />
     <MESSAGE value="updates with bugs" />
     <MESSAGE value="updates" />
     <MESSAGE value="added password field in users table" />
@@ -657,22 +656,11 @@
     <MESSAGE value="fixed newbook" />
     <MESSAGE value="created book page" />
     <MESSAGE value="added Auction model and the controller to handle creating a new auction" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Auction model and the controller to handle creating a new auction" />
+    <MESSAGE value="Book view updates: Bugs will not pull bookid inbto book view." />
+    <option name="LAST_COMMIT_MESSAGE" value="Book view updates: Bugs will not pull bookid inbto book view." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/app/mod_auction/controllers.py</url>
-          <line>25</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/app/mod_auction/controllers.py</url>
-          <line>24</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -680,7 +668,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="4" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -720,7 +708,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="469" max-vertical-offset="975">
           <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#0#29#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -787,7 +775,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="945">
           <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#0#29#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -895,13 +883,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33224222" vertical-offset="10717" max-vertical-offset="28245">
           <caret line="728" column="0" selection-start-line="728" selection-start-column="0" selection-end-line="728" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/werkzeug/local.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="8.224222" vertical-offset="0" max-vertical-offset="6195">
-          <caret line="337" column="0" selection-start-line="337" selection-start-column="0" selection-end-line="337" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1017,12 +998,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14869888" vertical-offset="0" max-vertical-offset="807">
           <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15653776" vertical-offset="335" max-vertical-offset="1275">
+        <state vertical-scroll-proportion="0.0" vertical-offset="335" max-vertical-offset="1275">
           <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
           <folding />
         </state>
@@ -1033,7 +1017,7 @@
         <state vertical-scroll-proportion="0.60966545" vertical-offset="33" max-vertical-offset="1065">
           <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#0#29#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1056,26 +1040,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/auction/book.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/member/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65217394" vertical-offset="0" max-vertical-offset="570">
-          <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+        <state vertical-scroll-proportion="-4.5652175" vertical-offset="0" max-vertical-offset="270">
+          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/member/profile.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/auction/book.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.5652175" vertical-offset="0" max-vertical-offset="270">
-          <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
+        <state vertical-scroll-proportion="-0.067307696" vertical-offset="65" max-vertical-offset="585">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/werkzeug/local.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="4814" max-vertical-offset="6195">
+          <caret line="335" column="0" selection-start-line="335" selection-start-column="0" selection-end-line="335" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/mod_auction/controllers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24861878" vertical-offset="0" max-vertical-offset="543">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.35911602" vertical-offset="0" max-vertical-offset="543">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
             <element signature="e#0#81#0" expanded="true" />
           </folding>
