@@ -7,8 +7,8 @@ mod_auction = Blueprint('auction', __name__, url_prefix='/auction')
 
 
 # Sign up - Registration for new users
-@mod_auction.route('/book/', methods=['GET', 'POST'])
-def book(bookID=3):
+@mod_auction.route('/book', methods=['GET', 'POST'])
+def book(bookID):
     form = Bid()
 
     if request.method == 'POST':
@@ -22,6 +22,6 @@ def book(bookID=3):
             return render_template('auction/book.html', form=form)
     
     elif request.method == 'GET':
-        bookS = db.session.query(Book).filter(Book.book_id==bookID)
+        bookS = db.session.query(Book).filter(Book.book_id == bookID)
         return render_template('auction/book.html', form=form, book=bookS)
 
