@@ -8,11 +8,11 @@ from app.models import User
 class UploadBookForm(Form):
     isbn = IntegerField("ISBN", [validators.DataRequired("Please enter the ISBN number.")])
     title = StringField("Title", [validators.DataRequired("Please enter the book's title.")])
-    # volume = IntegerField("Vol.")
+    volume = IntegerField("Vol.")
     author = StringField("Author", [validators.DataRequired("Please enter the book's author")])
-    # publisher = StringField("Publisher")
-    # year = IntegerField("Year")
-    # subject = StringField("Subject")
+    publisher = StringField("Publisher")
+    year = IntegerField("Year")
+    subject = StringField("Subject")
     submit = SubmitField("Upload Book")
 
     def __init__(self, *args, **kwargs):

@@ -43,10 +43,14 @@ class Book(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))
     auc_id = db.relationship('Auction', backref='book', lazy='dynamic')
 
-    def __init__(self, isbn, title, author, user_id):
+    def __init__(self, isbn, title, volume, author, publisher, year, subject, user_id):
         self.isbn = isbn
         self.title = title.title()
+        self.volume = volume
         self.author = author.title()
+        self.publisher = publisher
+        self.year = year
+        self.subject = subject
         self.user_id = user_id
 
 

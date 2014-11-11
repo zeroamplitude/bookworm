@@ -41,8 +41,9 @@ def newbook():
 
     if request.method == 'POST':
         uid = db.session.query(User.user_id).filter(User.email == session['email']).scalar()
-        book = Book(isbn=form.isbn.data, title=form.title.data,
-                    author=form.author.data, user_id=uid)
+        book = Book(isbn=form.isbn.data, title=form.title.data, volume=form.volume.data,
+                    author=form.author.data, publisher=form.publisher.data, year=form.year.data,
+                    subject=form.subject.data, user_id=uid)
         db.session.add(book)
         db.session.commit()
 
