@@ -1,8 +1,9 @@
+from datetime import datetime
 from flask import Blueprint, session, url_for, redirect, render_template, request, g
 from sqlalchemy import null
 from app import db
 from app.mod_member.forms import UploadBookForm
-from app.models import User, Book
+from app.models import User, Book, Auction
 
 
 mod_member = Blueprint('member', __name__, url_prefix='/member')
@@ -45,6 +46,10 @@ def newbook():
                     author=form.author.data, publisher=form.publisher.data, year=form.year.data,
                     subject=form.subject.data, user_id=uid)
         db.session.add(book)
+        db.session.commit()
+
+        auction = Auction(book_id=book.book_id, start_time=datetime.now(), end_time=form.endDate.data)
+        db.session.add(auction)
         db.session.commit()
 
         return redirect(url_for('member.profile'))
