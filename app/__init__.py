@@ -22,9 +22,11 @@ def not_found(error):
 from app.mod_auth.controllers import mod_auth as auth_module
 from app.mod_public.controllers import mod_public as public_module
 from app.mod_member.controllers import mod_member as member_module
+from app.mod_auction.controllers import mod_auction as auction_module
 
 
 # Register blueprints
 app.register_blueprint(auth_module)
 app.register_blueprint(public_module)
 app.register_blueprint(member_module)
+app.register_blueprint(auction_module)

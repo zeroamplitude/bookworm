@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+        {% block content %}
+        <div class="jumbo">
+            <table>
+                <td>
+                    <tr>
+                        <td>
+                            <h2>Title: </h2>
+                        </td>
+                        <td>
+                            <h3>{{ book.title }}</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h2>ISBN: </h2>
+                        </td>
+                        <td>
+                            <h3>{{ book.isbn }}</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h2>Author: </h2>
+                        </td>
+                        <td>
+                            <h3>{{ book.author }}</h3>
+                        </td>
+                    </tr>
+                </td>
+            </table>
+        </div>
+        {% endblock %}
