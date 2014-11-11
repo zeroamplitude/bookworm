@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8d201025-d32c-486d-8f03-6deaa2b599b7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/bookworm.db" afterPath="$PROJECT_DIR$/database/bookworm.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/__init__.py" afterPath="$PROJECT_DIR$/app/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mod_member/controllers.py" afterPath="$PROJECT_DIR$/app/mod_member/controllers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mod_member/forms.py" afterPath="$PROJECT_DIR$/app/mod_member/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/member/newbook.html" afterPath="$PROJECT_DIR$/app/templates/member/newbook.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Bookworm.iws" />
@@ -639,7 +635,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="created about page" />
     <MESSAGE value="added contact page" />
     <MESSAGE value="updates with bugs" />
     <MESSAGE value="updates" />
@@ -664,7 +659,8 @@
     <MESSAGE value="updated version" />
     <MESSAGE value="fixed newbook" />
     <MESSAGE value="created book page" />
-    <option name="LAST_COMMIT_MESSAGE" value="created book page" />
+    <MESSAGE value="added Auction model and the controller to handle creating a new auction" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Auction model and the controller to handle creating a new auction" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
