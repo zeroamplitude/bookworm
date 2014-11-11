@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8d201025-d32c-486d-8f03-6deaa2b599b7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/bookworm.db" afterPath="$PROJECT_DIR$/database/bookworm.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mod_auction/controllers.py" afterPath="$PROJECT_DIR$/app/mod_auction/controllers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mod_member/controllers.py" afterPath="$PROJECT_DIR$/app/mod_member/controllers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mod_member/forms.py" afterPath="$PROJECT_DIR$/app/mod_member/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/base.html" afterPath="$PROJECT_DIR$/app/templates/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Bookworm.iws" />
@@ -37,8 +35,8 @@
               <file leaf-file-name="controllers.py" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/app/mod_auction/controllers.py">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="2.5352113" vertical-offset="0" max-vertical-offset="555">
-                      <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+                    <state vertical-scroll-proportion="0.33811477" vertical-offset="0" max-vertical-offset="555">
+                      <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
                       <folding>
                         <element signature="e#0#81#0" expanded="true" />
                       </folding>
@@ -50,14 +48,24 @@
           </split-first>
           <split-second>
             <leaf>
-              <file leaf-file-name="controllers.py" pinned="false" current-in-tab="true">
+              <file leaf-file-name="controllers.py" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/app/mod_member/controllers.py">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.36619717" vertical-offset="653" max-vertical-offset="975">
+                    <state vertical-scroll-proportion="0.0" vertical-offset="469" max-vertical-offset="975">
                       <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
                       <folding>
                         <element signature="e#0#84#0" expanded="true" />
                       </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/app/templates/base.html">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state vertical-scroll-proportion="0.516129" vertical-offset="0" max-vertical-offset="720">
+                      <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+                      <folding />
                     </state>
                   </provider>
                 </entry>
@@ -89,7 +97,7 @@
               <file leaf-file-name="forms.py" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/app/mod_member/forms.py">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="2.4" vertical-offset="90" max-vertical-offset="390">
+                    <state vertical-scroll-proportion="0.51724136" vertical-offset="90" max-vertical-offset="390">
                       <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
                       <folding>
                         <element signature="e#0#28#0" expanded="true" />
@@ -144,7 +152,6 @@
         <option value="$PROJECT_DIR$/app/forms.py" />
         <option value="$PROJECT_DIR$/app/mod_member/__init__.py" />
         <option value="$PROJECT_DIR$/app/workingOn/old/views.py" />
-        <option value="$PROJECT_DIR$/app/templates/base.html" />
         <option value="$PROJECT_DIR$/app/templates/404.html" />
         <option value="$PROJECT_DIR$/app/templates/public/contact.html" />
         <option value="$PROJECT_DIR$/app/mod_public/models.py" />
@@ -171,13 +178,14 @@
         <option value="$PROJECT_DIR$/app/mod_auction/controllers.py" />
         <option value="$PROJECT_DIR$/app/mod_member/forms.py" />
         <option value="$PROJECT_DIR$/app/mod_member/controllers.py" />
+        <option value="$PROJECT_DIR$/app/templates/base.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="52" />
-    <option name="width" value="1920" />
-    <option name="height" value="500" />
+    <option name="width" value="960" />
+    <option name="height" value="1028" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -531,16 +539,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="52" width="1920" height="500" extended-state="2" />
+    <frame x="0" y="52" width="960" height="1028" extended-state="4" />
     <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2016851" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40788072" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41107562" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3163017" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13844515" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -568,7 +576,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="added unit tests for avatar url and unique name constraint" />
     <MESSAGE value="started css and implemented home page" />
     <MESSAGE value="created about page" />
     <MESSAGE value="added contact page" />
@@ -593,7 +600,8 @@
     <MESSAGE value="updated modules: Auction and Bid tables" />
     <MESSAGE value="fixed version 4" />
     <MESSAGE value="updated version" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated version" />
+    <MESSAGE value="fixed newbook" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed newbook" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -664,13 +672,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334" vertical-offset="2388" max-vertical-offset="3195">
           <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/flask/helpers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3478261" vertical-offset="3693" max-vertical-offset="12690">
-          <caret line="311" column="0" selection-start-line="311" selection-start-column="0" selection-end-line="311" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -800,13 +801,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="705">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/db_create.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2136076" vertical-offset="0" max-vertical-offset="632">
@@ -895,19 +889,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/mod_auction/controllers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.5352113" vertical-offset="0" max-vertical-offset="555">
-          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#81#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/mod_member/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.4" vertical-offset="90" max-vertical-offset="390">
+        <state vertical-scroll-proportion="0.51724136" vertical-offset="90" max-vertical-offset="390">
           <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
@@ -917,11 +901,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/mod_member/controllers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36619717" vertical-offset="653" max-vertical-offset="975">
+        <state vertical-scroll-proportion="0.0" vertical-offset="469" max-vertical-offset="975">
           <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
             <element signature="e#0#84#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mod_auction/controllers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33811477" vertical-offset="0" max-vertical-offset="555">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/flask/helpers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="4357" max-vertical-offset="12690">
+          <caret line="311" column="0" selection-start-line="311" selection-start-column="0" selection-end-line="311" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.516129" vertical-offset="0" max-vertical-offset="720">
+          <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
