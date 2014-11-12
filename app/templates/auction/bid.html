@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+        {% block content %}
+
+        <h2>You have successfully placed your bid</h2>
+
+        <p>Return to<a href="{{ url_for('auction/book.html', book=book.book_id) }}">{ book.title }</a></p>
+
+        {% endblock %}

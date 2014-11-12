@@ -2,6 +2,7 @@ from flask_wtf import Form
 from wtforms import StringField, PasswordField, SubmitField, validators
 from app.models import User
 
+
 # Sign up - Form to allow users to sign up
 class SignupForm(Form):
     fname = StringField("First name", [validators.DataRequired("Please enter your  first name.")])

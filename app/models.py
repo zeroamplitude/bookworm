@@ -71,10 +71,9 @@ class Bid(db.Model):
     bid_id = db.Column(db.Integer, primary_key=True)
     auc_id = db.Column(db.Integer, db.ForeignKey('auction.auc_id'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))
-    bid = db.Column(db.Float, unique=True)
+    bid_price = db.Column(db.Integer)
 
-    def __init__(self, auc_id, user_id, bid):
+    def __init__(self, auc_id, user_id, bid_price):
         self.auc_id = auc_id
         self.user_id = user_id
-        self.bid = bid
-
+        self.bid_price = bid_price
