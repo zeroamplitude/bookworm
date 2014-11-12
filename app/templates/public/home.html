@@ -12,7 +12,9 @@
         </form>
         <hr>
         {% for book in books %}
-        {% include 'public/post.html' %}
-        {% endfor %}
+        <a href="{{ url_for('auction.book', bookID=book.book_id) }}">
+            {% include 'public/post.html' %}
+        </a>
+    {% endfor %}
     </div>
 {% endblock %}
