@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+        {% block content %}
+        {% set book=book %}
+
+        {% for message in get_flashed_messages() %}
+            <div class="flash">{{ message }}</div>
+        {% endfor %}
+
+        {% for message in form.bid_price.errors %}
+            <div class="flash">{{ message }}</div>
+        {% endfor %}
+
+        <div class="jumbo">
+            <table>
+                <td>
+                    <tr>
+                        <td>
+                            <h2>Highest Bid</h2>
+                        </td>
+                        <td>
+                            <h3>$ {{ curPrice }}</h3>
+                        </td>
+                        <td>
+                            <h2>ISBN: </h2>
+                        </td>
+                        <td>
+                            <h3>{{ book.isbn }}</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h2>Title: </h2>
+                        </td>
+                        <td>
+                            <h3>{{ book.title }}</h3>
+                        </td>
+                        <td>
+                            <h2>Volume: </h2>
+                        </td>
+                        <td>
+                            <h3>{{ book.volume }}</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h2>Author: </h2>
+                        </td>
+                        <td>
+                            <h3>{{ book.author }}</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4>Publisher: </h4>
+                        </td>
+                        <td>
+                            <h5>{{ book.publisher }}</h5>
+                        </td>
+                        <td>
+                            <h4>Year: </h4>
+                        </td>
+                        <td>
+                            <h5>{{ book.year }}</h5>
+                        </td>
+                        <td>
+                            <h4>Subject: </h4>
+                        </td>
+                        <td>
+                            <h5>{{ book.subject }}</h5>
+                        </td>
+                    </tr>
+                </td>
+            </table>
+            <form action="{{ url_for('auction.book', bookID=book.book_id) }}" method="post">
+                {{ form.hidden_tag() }}
+                {{ form.bid_price.label }}
+                {{ form.bid_price }}
+                {{ form.submit }}
+            </form>
+
+        </div>
+        {% endblock %}

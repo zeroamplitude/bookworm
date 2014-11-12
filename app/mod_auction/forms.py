@@ -1,25 +1,22 @@
-from wtforms import StringField, validators, PasswordField, SubmitField, Form
-from app.models import User
+from flask_wtf import Form
+from wtforms import StringField, validators, PasswordField, SubmitField, IntegerField
+from app.models import User, Auction, Bid
 
 
-class Bid(Form):
-    bidPrice = StringField("First name", [validators.DataRequired("Please enter your  first name.")])
+class BidForm(Form):
+    bid_price = IntegerField("Bid", [validators.DataRequired("Please enter the ISBN number.")])
     submit = SubmitField("Bid")
 
     def __init__(self, *args, **kwargs):
         Form.__init__(self, *args, **kwargs)
 
-    # Validates email to ensure uniqueness
-    def validate(self):
-        if not Form.validate(self):
-            return False
-        # << sql >>
-        # SELECT * FROM users
-        # WHERE email = self.email.data.lower()
-        # LIMIT 1
-        user = User.query.filter_by(email=self.email.data.lower()).first()
-        if user:
-            self.email.errors.append("That email address is already taken")
-            return False
-        else:
-            return True
+    # Validates bid to ensure it is the highest
+    # def validate(self):
+    #     if not Form.validate(self):
+    #         return False
+    #     highBid = Bid.query.filter(Bid.auc_id == B.filter_by(highBid=self.bidPrice.data).scalar()
+    #     if user:
+    #         self.email.errors.append("That email address is already taken")
+    #         return False
+    #     else:
+    #         return True

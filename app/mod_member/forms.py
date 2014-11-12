@@ -1,6 +1,8 @@
+from datetime import datetime
 from flask import session, g
 from flask_wtf import Form
-from wtforms import IntegerField, validators, StringField, SubmitField
+from wtforms import IntegerField, validators, StringField, SubmitField, DateField
+from wtforms_components import DateRange
 from app import db
 from app.models import User
 
@@ -13,6 +15,7 @@ class UploadBookForm(Form):
     publisher = StringField("Publisher")
     year = IntegerField("Year")
     subject = StringField("Subject")
+    endDate = DateField("End Date", validators=[DateRange(min=datetime.now())])
     submit = SubmitField("Upload Book")
 
     def __init__(self, *args, **kwargs):

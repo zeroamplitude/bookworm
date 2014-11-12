@@ -5,7 +5,9 @@
         <h3>This is {{ session['email'] }}'s profile page</h3>
     <hr>
     {% for book in books %}
-        {% include 'member/post.html' %}
+        <a href="{{ url_for('auction.book', bookID=book.book_id) }}">
+            {% include 'member/post.html' %}
+        </a>
     {% endfor %}
     </div>
 {% endblock %}
