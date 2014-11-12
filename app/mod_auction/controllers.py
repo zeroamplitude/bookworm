@@ -3,7 +3,7 @@ from sqlalchemy import func
 from app import db
 from app.mod_auction.forms import BidForm
 from app.mod_member.forms import UploadBookForm
-from app.models import Book, Bid, User
+from app.models import Book, Bid, User, Auction
 
 mod_auction = Blueprint('auction', __name__, url_prefix='/auction')
 
@@ -13,8 +13,8 @@ mod_auction = Blueprint('auction', __name__, url_prefix='/auction')
 def book(bookID):
     form = BidForm()
     bookS = db.session.query(Book).filter(Book.book_id == bookID).scalar()
-    aucID = db.session.query(Book.auc_id).filter(Book.book_id == bookID).scalar()
-    curPrice = db.session.query(func.max(Bid.bid_price)).scalar()
+    aucID = db.session.query(Auction.auc_id).filter(Auction.book_id == bookID).scalar()
+    curPrice = db.session.query(func.max(Bid.bid_price)).filter(Bid.auc_id == aucID).scalar()
     if request.method == 'POST':
         if not form.validate():
             flash('Bid Unsuccessful')

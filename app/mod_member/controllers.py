@@ -58,6 +58,11 @@ def newbook():
         return render_template('member/newbook.html', form=form)
 
 
+@mod_member.route('/connect/')
+def connect():
+    return render_template('member/connect.html')
+
+
 
 def setGuser():
     User.user_id = g.user
