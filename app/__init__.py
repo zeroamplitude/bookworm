@@ -9,10 +9,6 @@ app.config.from_object('config')
 db = SQLAlchemy(app)
 
 
-lm = LoginManager()
-lm.init_app(app)
-lm.login_view = 'auth/signin'
-
 # Sample HTTP error handling
 @app.errorhandler(404)
 def not_found(error):
