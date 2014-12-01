@@ -1,13 +1,12 @@
 from flask import Flask, render_template
 from flask.ext.sqlalchemy import SQLAlchemy
-from flask.ext.api import FlaskAPI
+import googlebooks
 
 
 app = Flask(__name__)
 app.config.from_object('config')
 db = SQLAlchemy(app)
-api = FlaskAPI(app)
-
+api = googlebooks.Api()
 
 # Sample HTTP error handling
 @app.errorhandler(404)

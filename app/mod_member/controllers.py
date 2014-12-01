@@ -1,7 +1,8 @@
 from datetime import datetime
+import json
 from flask import Blueprint, session, url_for, redirect, render_template, request, g
 from sqlalchemy import null
-from app import db
+from app import db, api
 from app.mod_member.forms import UploadBookForm
 from app.models import User, Book, Auction
 
@@ -42,9 +43,17 @@ def newbook():
 
     if request.method == 'POST':
         uid = db.session.query(User.user_id).filter(User.email == session['email']).scalar()
+
+        image = api.list('isbn:9781118063330')
+        sThumbnail = image['items'][0]['volumeInfo']['imageLinks']['smallThumbnail']
+        lThumbnail = image['items'][0]['volumeInfo']['imageLinks']['thumbnail']
+
+
+
         book = Book(isbn=form.isbn.data, title=form.title.data, volume=form.volume.data,
                     author=form.author.data, publisher=form.publisher.data, year=form.year.data,
-                    subject=form.subject.data, user_id=uid)
+                    subject=form.subject.data, user_id=uid, smallThumbnail=sThumbnail,
+                    largeThumbnail=lThumbnail)
         db.session.add(book)
         db.session.commit()
 

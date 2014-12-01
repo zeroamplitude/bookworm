@@ -1,12 +1,23 @@
-<div style="width:750px;padding:5px;boarder:5px solid black;background-color:grey;">
+<div class="media-body">
     <table>
         <td valign="top">
             <tr>
+                <div style="margin-left:auto;margin-right:auto;width:70%;">
+                {% if not book.smallThumbnail %}
+                    <td><img src="http://simpleicon.com/wp-content/uploads/book-5.png" style="width:55px;height:80px"></td>
+                {% else %}
+                    <td><img src="{{ book.smallThumbnail }}"></td>
+                {% endif %}
+                </div>
+            </tr>
+
+            <tr>
+
                 <td><h4> Title:</h4></td>
                 <td>{{ book.title  }}</td></tr>
+
                 <br>
             <tr>
-                <td></td>
                 <td><h4>Author:</h4></td>
                 <td>{{ book.author }}</td>
                 <td><h4>  ISBN:</h4></td>

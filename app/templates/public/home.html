@@ -1,13 +1,100 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="jumbo">
+<div class="center-block">
+
+    <div class="col-md-12 col-sm-9">
+
+        <div class="jumbo">
         <h2>Welcome to Bookworm</h2>
         <h3>This is the home page for Bookworm</h3>
 
-        {% for book in books %}
-        <a href="{{ url_for('auction.book', bookID=book.book_id) }}">
-            {% include 'public/post.html' %}
-        </a>
-    {% endfor %}
+        {% for column in books|slice(3) %}
+
+        <div class="row">
+
+           {% for book in column %}
+
+            <div class="col-xs-6 col-lg-4">
+
+                <a href="{{ url_for('auction.book', bookID=book.book_id) }}">
+
+                {% include 'public/post.html' %}
+
+                </a>
+
+              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+
+            </div><!--/.col-xs-6.col-lg-4-->
+
+            <div class="col-xs-6 col-lg-4">
+
+                <a href="{{ url_for('auction.book', bookID=book.book_id) }}">
+
+                  {% include 'public/post.html' %}
+
+                </a>
+
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+
+            </div><!--/.col-xs-6.col-lg-4-->
+
+            <div class="col-xs-6 col-lg-4">
+
+                <a href="{{ url_for('auction.book', bookID=book.book_id) }}">
+
+                {% include 'public/post.html' %}
+
+                </a>
+
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div>
+
+             <div class="col-xs-6 col-lg-4">
+
+                 <a href="{{ url_for('auction.book', bookID=book.book_id) }}">
+
+                  {% include 'public/post.html' %}
+
+                 </a>
+
+                 <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+
+             </div><!--/.col-xs-6.col-lg-4-->
+
+            <div class="col-xs-6 col-lg-4">
+
+                <a href="{{ url_for('auction.book', bookID=book.book_id) }}">
+
+                  {% include 'public/post.html' %}
+
+                </a>
+
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+
+            </div><!--/.col-xs-6.col-lg-4-->
+
+            <div class="col-xs-6 col-lg-4">
+
+                <a href="{{ url_for('auction.book', bookID=book.book_id) }}">
+
+                  {% include 'public/post.html' %}
+
+                </a>
+
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+
+            </div><!--/.col-xs-6.col-lg-4-->
+        {% endfor %}
+        </div><!--/row-->
+        {% endfor %}
+
+        </div><!--/.col-xs-12.col-sm-9-->
+
+
+
+
+
     </div>
+</div>
+
 {% endblock %}

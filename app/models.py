@@ -40,10 +40,13 @@ class Book(db.Model):
     publisher = db.Column(db.String(120))
     year = db.Column(db.Integer)
     subject = db.Column(db.String(120))
+    smallThumbnail = db.Column(db.String(220))
+    largeThumbnail = db.Column(db.String(220))
     user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))
     auc_id = db.relationship('Auction', backref='book', lazy='dynamic')
 
-    def __init__(self, isbn, title, volume, author, publisher, year, subject, user_id):
+    def __init__(self, isbn, title, volume, author, publisher,
+                 year, subject, user_id, smallThumbnail, largeThumbnail):
         self.isbn = isbn
         self.title = title.title()
         self.volume = volume
@@ -52,6 +55,8 @@ class Book(db.Model):
         self.year = year
         self.subject = subject
         self.user_id = user_id
+        self.smallThumbnail = smallThumbnail
+        self.largeThumbnail = largeThumbnail
 
 
 class Auction(db.Model):

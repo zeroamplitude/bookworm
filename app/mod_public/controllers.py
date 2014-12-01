@@ -1,6 +1,5 @@
-from flask import render_template, request, Blueprint, session
-import sqlite3
-from app import mod_public, db
+from flask import render_template, request, Blueprint, session, url_for
+from app import mod_public, db, api
 from app.mod_public.forms import ContactForm, SearchForm
 from app.models import Book
 
@@ -12,15 +11,15 @@ mod_public = Blueprint('public', __name__, url_prefix='/')
 @mod_public.route('home/', methods=['GET', 'POST'])
 def home():
     form = SearchForm()
-    books = db.session.query(Book.isbn).all()
 
-    for book in books:
-
-
+    books = db.session.query(Book).all()
 
     if request.method == 'POST':
+
         return render_template('public/home.html', form=form, books=books)
+
     else:
+
         return render_template('public/home.html', form=form, books=books)
 
 
