@@ -1,12 +1,12 @@
 from flask import Flask, render_template
 from flask.ext.sqlalchemy import SQLAlchemy
-from flask.ext.login import LoginManager
-
+from flask.ext.api import FlaskAPI
 
 
 app = Flask(__name__)
 app.config.from_object('config')
 db = SQLAlchemy(app)
+api = FlaskAPI(app)
 
 
 # Sample HTTP error handling

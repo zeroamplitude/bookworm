@@ -2,8 +2,15 @@
 {% block content %}
     <div class="jumbo">
         <h2>Welcome to Bookworm</h2>
-        <h3>This is the home page for Bookworm</h3>
-
+        <h3>Searchin</h3>
+        <hr>
+        <form action="{{ url_for('public.search') }}" method="post">
+            {{ form.hidden_tag() }}
+            {{ form.title.label }}
+            {{ form.title }}
+            {{ form.submit }}
+        </form>
+        <hr>
         {% for book in books %}
         <a href="{{ url_for('auction.book', bookID=book.book_id) }}">
             {% include 'public/post.html' %}

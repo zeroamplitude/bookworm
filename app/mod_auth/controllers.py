@@ -24,7 +24,6 @@ def signup():
             newuser = User(form.fname.data, form.lname.data, form.email.data, form.password.data)
             db.session.add(newuser)
             db.session.commit()
-
             session['email'] = newuser.email
             return redirect(url_for('member.profile'))
 

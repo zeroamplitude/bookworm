@@ -13,8 +13,11 @@ mod_auction = Blueprint('auction', __name__, url_prefix='/auction')
 def book(bookID):
     form = BidForm()
     bookS = db.session.query(Book).filter(Book.book_id == bookID).scalar()
+    print(str(db.session.query(Book).filter(Book.book_id == bookID).as_scalar()))
     aucID = db.session.query(Auction.auc_id).filter(Auction.book_id == bookID).scalar()
+    print(str(db.session.query(Auction.auc_id).filter(Auction.book_id == bookID).as_scalar()))
     curPrice = db.session.query(func.max(Bid.bid_price)).filter(Bid.auc_id == aucID).scalar()
+    print(str(db.session.query(func.max(Bid.bid_price)).filter(Bid.auc_id == aucID).as_scalar()))
     if request.method == 'POST':
         if not form.validate():
             flash('Bid Unsuccessful')
