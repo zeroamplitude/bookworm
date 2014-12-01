@@ -44,11 +44,11 @@ def newbook():
     if request.method == 'POST':
         uid = db.session.query(User.user_id).filter(User.email == session['email']).scalar()
 
-        image = api.list('isbn:9781118063330')
+        isbnImg = "isbn" + str(form.isbn.data)
+        image = api.list(isbnImg)
+
         sThumbnail = image['items'][0]['volumeInfo']['imageLinks']['smallThumbnail']
         lThumbnail = image['items'][0]['volumeInfo']['imageLinks']['thumbnail']
-
-
 
         book = Book(isbn=form.isbn.data, title=form.title.data, volume=form.volume.data,
                     author=form.author.data, publisher=form.publisher.data, year=form.year.data,
@@ -71,6 +71,11 @@ def newbook():
 def connect():
     return render_template('member/connect.html')
 
+
+@mod_member.route('/bestBooks/')
+def bestBooks():
+    pass
+    # best = db.session.query(Book).filter(Book.auc_id = Auction.auc_id).filter(Auction.bid)
 
 
 def setGuser():

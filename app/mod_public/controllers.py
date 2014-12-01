@@ -1,7 +1,8 @@
 from flask import render_template, request, Blueprint, session, url_for
+from sqlalchemy import func
 from app import mod_public, db, api
 from app.mod_public.forms import ContactForm, SearchForm
-from app.models import Book
+from app.models import Book, Bid, Auction
 
 
 mod_public = Blueprint('public', __name__, url_prefix='/')

@@ -1,4 +1,4 @@
-<div style="width:750px;padding:5px;boarder:5px solid black;background-color:grey;">
+<div style="width:1350px;padding:5px;boarder:5px solid black;">
     <table>
         <td valign="top">
             <tr>
@@ -7,9 +7,14 @@
                 {% else %}
                     <td><img src="{{ book.smallThumbnail }}"></td>
                 {% endif %}
+                <td>
+                    <h2>Highest Bid</h2>
+                </td>
+                <td>
+                    <h3>$ {{ book.curPrice }}</h3>
+                </td>
                 <td><h4> Title:</h4></td>
                 <td>{{ book.title  }}</td></tr>
-
                 <br>
             <tr>
                 <td><h4>Author:</h4></td>
